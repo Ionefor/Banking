@@ -9,3 +9,16 @@ G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.SharedKe
 G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.SharedKernel\obj\Debug\net8.0\refint\Banking.SharedKernel.dll
 G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.SharedKernel\obj\Debug\net8.0\Banking.SharedKernel.pdb
 G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.SharedKernel\obj\Debug\net8.0\ref\Banking.SharedKernel.dll
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\Shared\Banking.SharedKernel\bin\Debug\net8.0\Banking.SharedKernel.deps.json
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\Shared\Banking.SharedKernel\bin\Debug\net8.0\Banking.SharedKernel.dll
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\Shared\Banking.SharedKernel\bin\Debug\net8.0\Banking.SharedKernel.pdb
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\Shared\Banking.SharedKernel\obj\Debug\net8.0\Banking.SharedKernel.csproj.AssemblyReference.cache
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\Shared\Banking.SharedKernel\obj\Debug\net8.0\Banking.SharedKernel.GeneratedMSBuildEditorConfig.editorconfig
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\Shared\Banking.SharedKernel\obj\Debug\net8.0\Banking.SharedKernel.AssemblyInfoInputs.cache
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\Shared\Banking.SharedKernel\obj\Debug\net8.0\Banking.SharedKernel.AssemblyInfo.cs
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\Shared\Banking.SharedKernel\obj\Debug\net8.0\Banking.SharedKernel.csproj.CoreCompileInputs.cache
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\Shared\Banking.SharedKernel\obj\Debug\net8.0\Banking.SharedKernel.sourcelink.json
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\Shared\Banking.SharedKernel\obj\Debug\net8.0\Banking.SharedKernel.dll
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\Shared\Banking.SharedKernel\obj\Debug\net8.0\refint\Banking.SharedKernel.dll
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\Shared\Banking.SharedKernel\obj\Debug\net8.0\Banking.SharedKernel.pdb
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\Shared\Banking.SharedKernel\obj\Debug\net8.0\ref\Banking.SharedKernel.dll

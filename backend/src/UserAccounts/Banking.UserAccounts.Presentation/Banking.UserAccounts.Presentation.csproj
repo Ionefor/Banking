@@ -6,4 +6,14 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\Shared\Banking.Framework\Banking.Framework.csproj" />
+      <ProjectReference Include="..\Banking.UserAccounts.Application\Banking.UserAccounts.Application.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Requests\Account\" />
+      <Folder Include="Requests\Profile\" />
+    </ItemGroup>
+
 </Project>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "atArFuNsZw8=",
+  "dgSpecHash": "rmb0MnRn4cQ=",
   "success": true,
-  "projectFilePath": "G:\\Programming\\.Net\\Current Projects\\Banking\\backend\\src\\BankAccounts\\Banking.BankAccounts.Domain\\Banking.BankAccounts.Domain.csproj",
+  "projectFilePath": "G:\\Programming\\.Net\\Current Projects\\Banking\\Banking\\backend\\src\\BankAccounts\\Banking.BankAccounts.Domain\\Banking.BankAccounts.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gusev\\.nuget\\packages\\csharpfunctionalextensions\\3.5.1\\csharpfunctionalextensions.3.5.1.nupkg.sha512"
   ],

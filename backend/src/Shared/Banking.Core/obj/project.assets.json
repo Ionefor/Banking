@@ -961,11 +961,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Programming\\.Net\\Current Projects\\Banking\\backend\\src\\Shared\\Banking.Core\\Banking.Core.csproj",
+      "projectUniqueName": "G:\\Programming\\.Net\\Current Projects\\Banking\\Banking\\backend\\src\\Shared\\Banking.Core\\Banking.Core.csproj",
       "projectName": "Banking.Core",
-      "projectPath": "G:\\Programming\\.Net\\Current Projects\\Banking\\backend\\src\\Shared\\Banking.Core\\Banking.Core.csproj",
+      "projectPath": "G:\\Programming\\.Net\\Current Projects\\Banking\\Banking\\backend\\src\\Shared\\Banking.Core\\Banking.Core.csproj",
       "packagesPath": "C:\\Users\\gusev\\.nuget\\packages\\",
-      "outputPath": "G:\\Programming\\.Net\\Current Projects\\Banking\\backend\\src\\Shared\\Banking.Core\\obj\\",
+      "outputPath": "G:\\Programming\\.Net\\Current Projects\\Banking\\Banking\\backend\\src\\Shared\\Banking.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -987,8 +987,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "G:\\Programming\\.Net\\Current Projects\\Banking\\backend\\src\\Shared\\Banking.SharedKernel\\Banking.SharedKernel.csproj": {
-              "projectPath": "G:\\Programming\\.Net\\Current Projects\\Banking\\backend\\src\\Shared\\Banking.SharedKernel\\Banking.SharedKernel.csproj"
+            "G:\\Programming\\.Net\\Current Projects\\Banking\\Banking\\backend\\src\\Shared\\Banking.SharedKernel\\Banking.SharedKernel.csproj": {
+              "projectPath": "G:\\Programming\\.Net\\Current Projects\\Banking\\Banking\\backend\\src\\Shared\\Banking.SharedKernel\\Banking.SharedKernel.csproj"
             }
           }
         }
