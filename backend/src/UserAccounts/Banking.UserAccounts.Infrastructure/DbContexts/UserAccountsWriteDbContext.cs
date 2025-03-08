@@ -9,7 +9,8 @@ using Microsoft.Extensions.Logging;
 
 namespace Banking.UserAccounts.Infrastructure.DbContexts;
 
-public class UserAccountsWriteDbContext(IConfiguration configuration) : IdentityDbContext<User, Role, Guid>
+public class UserAccountsWriteDbContext(IConfiguration configuration)
+    : IdentityDbContext<User, Role, Guid>
 {
     public DbSet<Permission> Permissions => Set<Permission>();
     public DbSet<RolePermission> RolePermission => Set<RolePermission>();
@@ -53,7 +54,7 @@ public class UserAccountsWriteDbContext(IConfiguration configuration) : Identity
             typeof(UserAccountsWriteDbContext).Assembly,
             type => type.FullName?.Contains(Constants.Shared.ConfigurationsWrite) ?? false);
         
-        modelBuilder.HasDefaultSchema("UserAccount");
+        modelBuilder.HasDefaultSchema("user_accounts");
     }
     private ILoggerFactory CreateLoggerFactory()
     {

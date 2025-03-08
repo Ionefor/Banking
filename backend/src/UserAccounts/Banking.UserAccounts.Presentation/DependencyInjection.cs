@@ -5,7 +5,7 @@ namespace Banking.UserAccounts.Presentation;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddVolunteersPresentation(this IServiceCollection services)
+    public static IServiceCollection AddUserPresentation(this IServiceCollection services)
     {
         return services.AddScoped<IUserAccountsContract, UserAccountsContract>();
     }

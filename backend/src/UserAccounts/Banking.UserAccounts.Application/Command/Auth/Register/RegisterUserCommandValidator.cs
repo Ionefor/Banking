@@ -9,8 +9,6 @@ public class RegisterUserCommandValidator : AbstractValidator<RegisterUserComman
 {
     public RegisterUserCommandValidator()
     {
-        RuleFor(r => r.AccountType).NotNull().NotEmpty();
-        
         When(r => r.AccountType == AccountType.Corporate, () =>
         {
             RuleFor(r => r.CorporateAccountDto)

@@ -6,7 +6,7 @@ namespace Banking.UserAccounts.Application;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddVolunteersApplication(this IServiceCollection services)
+    public static IServiceCollection AddUserApplication(this IServiceCollection services)
     {
         services.
             AddCommands().

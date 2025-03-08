@@ -22,3 +22,7 @@ G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Ba
 G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\obj\Debug\net8.0\Banking.BankAccounts.Contracts.pdb
 G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\obj\Debug\net8.0\ref\Banking.BankAccounts.Contracts.dll
 G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\obj\Debug\net8.0\Banking.BankAccounts.Contracts.sourcelink.json
+G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\bin\Debug\net8.0\Banking.SharedKernel.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\bin\Debug\net8.0\Banking.SharedKernel.pdb
+G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\obj\Debug\net8.0\Banking.BankAccounts.Contracts.csproj.AssemblyReference.cache
+G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\obj\Debug\net8.0\Banking..7FEF4663.Up2Date
