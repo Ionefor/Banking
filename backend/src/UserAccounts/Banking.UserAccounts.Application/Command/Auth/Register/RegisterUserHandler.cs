@@ -94,11 +94,11 @@ public record RegisterUserHandler : ICommandHandler<RegisterUserCommand>
             dto.Address.Street,
             dto.Address.HouseNumber).Value;
             
-        var email = Email.Create(dto.ContactEmail).Value;
+        var email = Email.Create(dto.RegisterDto.Email).Value;
             
         var phoneNumber = PhoneNumber.Create(dto.PhoneNumber).Value;
             
-        var photo = Photo.Create(dto.Photo).Value ;
+        var photo = FilePath.Create(dto.Photo).Value ;
         
         var dateOfBirth = DateOfBirth.Create(dto.DateOfBirth).Value;
         
@@ -161,7 +161,7 @@ public record RegisterUserHandler : ICommandHandler<RegisterUserCommand>
                 dto.Address.Street,
                 dto.Address.HouseNumber).Value;
             
-            var email = Email.Create(dto.ContactEmail).Value;
+            var email = Email.Create(dto.RegisterDto.Email).Value;
             
             var phoneNumber = PhoneNumber.Create(dto.ContactPhone).Value;
             

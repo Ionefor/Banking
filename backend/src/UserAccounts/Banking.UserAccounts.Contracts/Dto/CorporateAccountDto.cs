@@ -3,7 +3,6 @@
 public record CorporateAccountDto(
     string CompanyName,
     RegisterDto RegisterDto,
-    string ContactEmail,
     FullNameDto FullName,
     AddressDto Address,
     string ContactPhone,

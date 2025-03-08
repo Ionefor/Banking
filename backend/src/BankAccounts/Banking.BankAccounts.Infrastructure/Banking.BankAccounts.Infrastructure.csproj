@@ -6,4 +6,17 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="EFCore.NamingConventions" Version="9.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="10.0.0-preview.1.25080.5" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="10.0.0-preview.1.25080.5" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Shared\Banking.Core\Banking.Core.csproj" />
+      <ProjectReference Include="..\Banking.BankAccounts.Application\Banking.BankAccounts.Application.csproj" />
+      <ProjectReference Include="..\Banking.BankAccounts.Contracts\Banking.BankAccounts.Contracts.csproj" />
+    </ItemGroup>
+
 </Project>

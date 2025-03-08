@@ -3,7 +3,6 @@
 public record IndividualAccountDto(
     RegisterDto RegisterDto,
     FullNameDto FullName,
-    string ContactEmail,
     AddressDto Address,
     string PhoneNumber,
     DateOnly DateOfBirth,

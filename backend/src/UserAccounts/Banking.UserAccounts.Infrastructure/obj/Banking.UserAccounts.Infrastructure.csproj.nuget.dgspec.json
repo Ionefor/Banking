@@ -60,7 +60,7 @@
             },
             "Microsoft.AspNetCore.Authorization": {
               "target": "Package",
-              "version": "[10.0.0-preview.1.25120.3, )"
+              "version": "[8.0.13, )"
             },
             "Microsoft.AspNetCore.Http.Abstractions": {
               "target": "Package",
@@ -373,7 +373,7 @@
           "dependencies": {
             "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",
-              "version": "[10.0.0-preview.1.25120.3, )"
+              "version": "[8.0.13, )"
             }
           },
           "imports": [
@@ -446,9 +446,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "EntityFrameworkCore.NamingConventions": {
+            "EFCore.NamingConventions": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -460,15 +460,15 @@
             },
             "Microsoft.Extensions.Logging.Console": {
               "target": "Package",
-              "version": "[10.0.0-preview.1.25080.5, )"
+              "version": "[8.0.1, )"
             },
-            "Microsoft.IdentityModel.JsonWebTokens": {
+            "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
               "version": "[8.6.1, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[8.0.11, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",

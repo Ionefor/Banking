@@ -14,7 +14,7 @@ public class IndividualAccount
         Email email,
         PhoneNumber phoneNumber,
         DateOfBirth dateOfBirth,
-        Photo? photo)
+        FilePath photo)
     {
         Id = Guid.NewGuid();
         User = user;
@@ -38,7 +38,7 @@ public class IndividualAccount
     
     public DateOfBirth DateOfBirth { get; init; }
     
-    public Photo? Photo { get; init; }
+    public FilePath Photo { get; init; }
     
     //update: number, photo, email, address
 }

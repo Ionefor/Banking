@@ -1,0 +1,52 @@
+﻿{
+  "Roles" : {
+    "Admin" : [
+      "Volunteer.Create",
+      "Volunteer.Read",
+      "Volunteer.Update",
+      "Volunteer.Delete"
+    ],
+    "Individual" : [
+      "Volunteer.Read",
+      "Pet.Create",
+      "Pet.Read",
+      "Pet.Update",
+      "Pet.Delete",
+      "Species.Read",
+      "Breed.Read"
+    ],
+    "Corporate" : [
+      "Volunteer.Read",
+      "Pet.Read",
+      "Species.Read",
+      "Breed.Read"
+    ]
+  },
+
+  "Permissions" : {
+    "Volunteers" : [
+      "Volunteer.Create",
+      "Volunteer.Read",
+      "Volunteer.Update",
+      "Volunteer.Delete"
+    ],
+    "Pets" : [
+      "Pet.Create",
+      "Pet.Read",
+      "Pet.Update",
+      "Pet.Delete"
+    ],
+    "Species" : [
+      "Species.Create",
+      "Species.Read",
+      "Species.Update",
+      "Species.Delete"
+    ],
+    "Breeds" : [
+      "Breed.Create",
+      "Breed.Read",
+      "Breed.Update",
+      "Breed.Delete"
+    ]
+  }
+}
