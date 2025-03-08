@@ -9,3 +9,15 @@ G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.Ba
 G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\obj\Debug\net8.0\refint\Banking.BankAccounts.Contracts.dll
 G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\obj\Debug\net8.0\Banking.BankAccounts.Contracts.pdb
 G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\obj\Debug\net8.0\ref\Banking.BankAccounts.Contracts.dll
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\bin\Debug\net8.0\Banking.BankAccounts.Contracts.deps.json
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\bin\Debug\net8.0\Banking.BankAccounts.Contracts.dll
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\bin\Debug\net8.0\Banking.BankAccounts.Contracts.pdb
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\obj\Debug\net8.0\Banking.BankAccounts.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\obj\Debug\net8.0\Banking.BankAccounts.Contracts.AssemblyInfoInputs.cache
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\obj\Debug\net8.0\Banking.BankAccounts.Contracts.AssemblyInfo.cs
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\obj\Debug\net8.0\Banking.BankAccounts.Contracts.csproj.CoreCompileInputs.cache
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\obj\Debug\net8.0\Banking.BankAccounts.Contracts.sourcelink.json
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\obj\Debug\net8.0\Banking.BankAccounts.Contracts.dll
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\obj\Debug\net8.0\refint\Banking.BankAccounts.Contracts.dll
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\obj\Debug\net8.0\Banking.BankAccounts.Contracts.pdb
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\obj\Debug\net8.0\ref\Banking.BankAccounts.Contracts.dll

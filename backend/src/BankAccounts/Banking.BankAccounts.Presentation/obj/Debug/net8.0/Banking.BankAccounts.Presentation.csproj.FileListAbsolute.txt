@@ -9,3 +9,15 @@ G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.Ba
 G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Presentation\obj\Debug\net8.0\refint\Banking.BankAccounts.Presentation.dll
 G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Presentation\obj\Debug\net8.0\Banking.BankAccounts.Presentation.pdb
 G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Presentation\obj\Debug\net8.0\ref\Banking.BankAccounts.Presentation.dll
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Presentation\bin\Debug\net8.0\Banking.BankAccounts.Presentation.deps.json
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Presentation\bin\Debug\net8.0\Banking.BankAccounts.Presentation.dll
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Presentation\bin\Debug\net8.0\Banking.BankAccounts.Presentation.pdb
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Presentation\obj\Debug\net8.0\Banking.BankAccounts.Presentation.GeneratedMSBuildEditorConfig.editorconfig
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Presentation\obj\Debug\net8.0\Banking.BankAccounts.Presentation.AssemblyInfoInputs.cache
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Presentation\obj\Debug\net8.0\Banking.BankAccounts.Presentation.AssemblyInfo.cs
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Presentation\obj\Debug\net8.0\Banking.BankAccounts.Presentation.csproj.CoreCompileInputs.cache
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Presentation\obj\Debug\net8.0\Banking.BankAccounts.Presentation.sourcelink.json
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Presentation\obj\Debug\net8.0\Banking.BankAccounts.Presentation.dll
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Presentation\obj\Debug\net8.0\refint\Banking.BankAccounts.Presentation.dll
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Presentation\obj\Debug\net8.0\Banking.BankAccounts.Presentation.pdb
+G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Presentation\obj\Debug\net8.0\ref\Banking.BankAccounts.Presentation.dll
