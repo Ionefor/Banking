@@ -9,10 +9,9 @@ namespace Banking.UserAccounts.Domain;
 public class User : IdentityUser<Guid>
 {
     public List<Role> Roles { get; init; } = [];
-    public FullName FullName { get; init; } = null!;
-   
+    
     public static Result<User, Error> CreateIndividualAccount(
-        FullName fullName, string userName, string email, Role role)
+        string userName, string email, Role role)
     {
         if (role.Name != IndividualAccount.Individual)
         {
@@ -22,7 +21,6 @@ public class User : IdentityUser<Guid>
         
         return new User
         {
-            FullName = fullName,
             UserName = userName,
             Email = email,
             Roles = [role]
@@ -30,7 +28,7 @@ public class User : IdentityUser<Guid>
     }
     
     public static Result<User, Error> CreateCorporateAccount(
-        FullName fullName, string userName, string email, Role role)
+       string userName, string email, Role role)
     {
         if (role.Name != CorporateAccount.Corporate)
         {
@@ -40,7 +38,6 @@ public class User : IdentityUser<Guid>
         
         return new User
         {
-            FullName = fullName,
             UserName = userName,
             Email = email,
             Roles = [role]
@@ -57,7 +54,6 @@ public class User : IdentityUser<Guid>
         
         return new User
         {
-            FullName = FullName.Create(userName, userName, userName).Value,
             UserName = userName,
             Email = email,
             Roles = [role]

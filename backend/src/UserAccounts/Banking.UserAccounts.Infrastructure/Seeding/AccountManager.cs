@@ -33,6 +33,9 @@ public class AccountManager(UserAccountsWriteDbContext accountsWriteDbContext) :
         var individualAccount = await accountsWriteDbContext.IndividualAccount.
             FirstOrDefaultAsync(x => x.UserId == userId);
       
+        if(individualAccount is not null)
+            return (individualAccount, null);
+        
         var corporateAccount = await accountsWriteDbContext.CorporateAccount
             .FirstOrDefaultAsync(a => a.UserId == userId);
       

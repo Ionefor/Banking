@@ -11,9 +11,4 @@
       <ProjectReference Include="..\Banking.UserAccounts.Application\Banking.UserAccounts.Application.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Requests\Account\" />
-      <Folder Include="Requests\Profile\" />
-    </ItemGroup>
-
 </Project>

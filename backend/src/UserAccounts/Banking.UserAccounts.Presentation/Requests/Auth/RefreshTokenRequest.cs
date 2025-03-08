@@ -1,4 +1,4 @@
-﻿using Banking.UserAccounts.Application.Command.Auth.Refresh;
+﻿using Banking.UserAccounts.Application.Commands.Auth.Refresh;
 
 namespace Banking.UserAccounts.Presentation.Requests.Auth;
 
