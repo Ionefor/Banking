@@ -1,4 +1,5 @@
-﻿using Banking.UserAccounts.Domain.Accounts;
+﻿using Banking.SharedKernel.Definitions;
+using Banking.UserAccounts.Domain.Accounts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -27,6 +28,24 @@ public class IndividualAccountConfiguration : IEntityTypeConfiguration<Individua
             ca.Property(c => c.HouseNumber)
                 .IsRequired()
                 .HasColumnName("house_number");
+        });
+        
+        builder.ComplexProperty(v => v.FullName, fb =>
+        {
+            fb.Property(f => f.FirstName)
+                .IsRequired()
+                .HasMaxLength(Constants.Shared.MaxLowTextLength)
+                .HasColumnName("firstName");
+
+            fb.Property(f => f.MiddleName)
+                .IsRequired()
+                .HasMaxLength(Constants.Shared.MaxLowTextLength)
+                .HasColumnName("middleName");
+
+            fb.Property(f => f.LastName)
+                .IsRequired(false)
+                .HasMaxLength(Constants.Shared.MaxLowTextLength)
+                .HasColumnName("lastName");
         });
         
         builder.ComplexProperty(c => c.Email, ce =>

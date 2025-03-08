@@ -1,8 +1,9 @@
-﻿using Banking.UserAccounts.Domain.ValueObjects;
+﻿using Banking.SharedKernel.Models.Abstractions;
+using Banking.UserAccounts.Domain.ValueObjects;
 
 namespace Banking.UserAccounts.Domain.Accounts;
 
-public class IndividualAccount 
+public class IndividualAccount
 {
     public static string Individual = nameof(Individual);
     
@@ -10,6 +11,7 @@ public class IndividualAccount
     
     public IndividualAccount(
         User user,
+        FullName fullName,
         Address address,
         Email email,
         PhoneNumber phoneNumber,
@@ -23,6 +25,7 @@ public class IndividualAccount
         PhoneNumber = phoneNumber;
         DateOfBirth = dateOfBirth;
         Photo = photo;
+        FullName = fullName;
     }
     
     public Guid Id { get; init; }
@@ -30,15 +33,40 @@ public class IndividualAccount
     
     public Guid UserId { get; init; }
     
-    public PhoneNumber PhoneNumber { get; init; }
+    public FullName FullName { get; private set; } = null!;
     
-    public Address Address { get; init; } = null!;
+    public PhoneNumber PhoneNumber { get; private set; }
     
-    public Email Email { get; init; }
+    public Address Address { get; private set; } = null!;
     
-    public DateOfBirth DateOfBirth { get; init; }
+    public Email Email { get; private set; }
     
-    public FilePath Photo { get; init; }
+    public DateOfBirth DateOfBirth { get;  init; }
     
-    //update: number, photo, email, address
+    public FilePath Photo { get;  private set; }
+
+    public void UpdateName(FullName fullName)
+    {
+        FullName = fullName;
+    }
+    
+    public void UpdatePhoneNumber(PhoneNumber phoneNumber)
+    {
+        PhoneNumber = phoneNumber;
+    }
+    
+    public void UpdateAddress(Address address)
+    {
+        Address = address;
+    }
+    
+    public void UpdateEmail(Email email)
+    {
+        Email = email;
+    }
+    
+    public void UpdatePhoto(FilePath photo)
+    {
+        Photo = photo;
+    }
 }
