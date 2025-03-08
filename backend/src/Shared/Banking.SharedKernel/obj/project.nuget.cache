@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "HtGqS/CBz44=",
+  "dgSpecHash": "e55ovbnobfg=",
   "success": true,
   "projectFilePath": "G:\\Programming\\.Net\\Current Projects\\Banking\\backend\\src\\Shared\\Banking.SharedKernel\\Banking.SharedKernel.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\gusev\\.nuget\\packages\\csharpfunctionalextensions\\3.5.1\\csharpfunctionalextensions.3.5.1.nupkg.sha512"
+  ],
   "logs": []
 }
