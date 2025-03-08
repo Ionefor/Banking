@@ -1,4 +1,4 @@
-﻿using Banking.UserAccounts.Application.Command.Auth.Login;
+﻿using Banking.UserAccounts.Application.Commands.Auth.Login;
 
 namespace Banking.UserAccounts.Presentation.Requests.Auth;
 

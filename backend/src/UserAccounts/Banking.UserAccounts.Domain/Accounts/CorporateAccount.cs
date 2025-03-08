@@ -31,15 +31,38 @@ public class CorporateAccount
     
     public Guid UserId { get; init; }
     
-    public Name CompanyName  { get; init; } = null!;
+    public Name CompanyName  { get; private set; } = null!;
     
-    public Address Address  { get; init; } = null!;
+    public Address Address  { get; private set; } = null!;
     
-    public TaxId TaxId  { get; init; } = null!;
+    public TaxId TaxId  { get; private set; } = null!;
     
-    public Email ContactEmail { get; init; }
+    public Email ContactEmail { get; private set; }
     
-    public PhoneNumber ContactPhone { get; init; }
+    public PhoneNumber ContactPhone { get; private set; }
     
-    //update: companyName, contactEmail, address, taxId, contactPhone
+    public void UpdatePhoneNumber(PhoneNumber phoneNumber)
+    {
+        ContactPhone = phoneNumber;
+    }
+    
+    public void UpdateAddress(Address address)
+    {
+        Address = address;
+    }
+    
+    public void UpdateEmail(Email email)
+    {
+        ContactEmail = email;
+    }
+    
+    public void UpdateTaxId(TaxId taxId)
+    {
+        TaxId = taxId;
+    }
+    
+    public void UpdateCompanyName(Name companyName)
+    {
+        CompanyName = companyName;
+    }
 }
