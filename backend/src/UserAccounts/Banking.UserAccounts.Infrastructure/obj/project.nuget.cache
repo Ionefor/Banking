@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DKQ1W0ZV5QY=",
+  "dgSpecHash": "QIYbCghPBCE=",
   "success": true,
-  "projectFilePath": "G:\\Programming\\.Net\\Current Projects\\Banking\\Banking\\backend\\src\\UserAccounts\\Banking.UserAccounts.Infrastructure\\Banking.UserAccounts.Infrastructure.csproj",
+  "projectFilePath": "G:\\Programming\\.Net\\Current Projects\\Banking\\backend\\src\\UserAccounts\\Banking.UserAccounts.Infrastructure\\Banking.UserAccounts.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gusev\\.nuget\\packages\\csharpfunctionalextensions\\3.5.1\\csharpfunctionalextensions.3.5.1.nupkg.sha512",
     "C:\\Users\\gusev\\.nuget\\packages\\entityframeworkcore.namingconventions\\8.0.0\\entityframeworkcore.namingconventions.8.0.0.nupkg.sha512",

@@ -21,3 +21,4 @@ G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Ba
 G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\obj\Debug\net8.0\refint\Banking.BankAccounts.Contracts.dll
 G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\obj\Debug\net8.0\Banking.BankAccounts.Contracts.pdb
 G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\obj\Debug\net8.0\ref\Banking.BankAccounts.Contracts.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Contracts\obj\Debug\net8.0\Banking.BankAccounts.Contracts.sourcelink.json

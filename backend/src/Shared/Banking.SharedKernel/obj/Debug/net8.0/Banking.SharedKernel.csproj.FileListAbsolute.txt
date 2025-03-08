@@ -22,3 +22,5 @@ G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\Shared\Banking.
 G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\Shared\Banking.SharedKernel\obj\Debug\net8.0\refint\Banking.SharedKernel.dll
 G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\Shared\Banking.SharedKernel\obj\Debug\net8.0\Banking.SharedKernel.pdb
 G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\Shared\Banking.SharedKernel\obj\Debug\net8.0\ref\Banking.SharedKernel.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.SharedKernel\obj\Debug\net8.0\Banking.SharedKernel.csproj.AssemblyReference.cache
+G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.SharedKernel\obj\Debug\net8.0\Banking.SharedKernel.sourcelink.json

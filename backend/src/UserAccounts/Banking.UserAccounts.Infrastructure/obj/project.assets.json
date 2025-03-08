@@ -2349,11 +2349,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Programming\\.Net\\Current Projects\\Banking\\Banking\\backend\\src\\UserAccounts\\Banking.UserAccounts.Infrastructure\\Banking.UserAccounts.Infrastructure.csproj",
+      "projectUniqueName": "G:\\Programming\\.Net\\Current Projects\\Banking\\backend\\src\\UserAccounts\\Banking.UserAccounts.Infrastructure\\Banking.UserAccounts.Infrastructure.csproj",
       "projectName": "Banking.UserAccounts.Infrastructure",
-      "projectPath": "G:\\Programming\\.Net\\Current Projects\\Banking\\Banking\\backend\\src\\UserAccounts\\Banking.UserAccounts.Infrastructure\\Banking.UserAccounts.Infrastructure.csproj",
+      "projectPath": "G:\\Programming\\.Net\\Current Projects\\Banking\\backend\\src\\UserAccounts\\Banking.UserAccounts.Infrastructure\\Banking.UserAccounts.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\gusev\\.nuget\\packages\\",
-      "outputPath": "G:\\Programming\\.Net\\Current Projects\\Banking\\Banking\\backend\\src\\UserAccounts\\Banking.UserAccounts.Infrastructure\\obj\\",
+      "outputPath": "G:\\Programming\\.Net\\Current Projects\\Banking\\backend\\src\\UserAccounts\\Banking.UserAccounts.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2375,8 +2375,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "G:\\Programming\\.Net\\Current Projects\\Banking\\Banking\\backend\\src\\UserAccounts\\Banking.UserAccounts.Application\\Banking.UserAccounts.Application.csproj": {
-              "projectPath": "G:\\Programming\\.Net\\Current Projects\\Banking\\Banking\\backend\\src\\UserAccounts\\Banking.UserAccounts.Application\\Banking.UserAccounts.Application.csproj"
+            "G:\\Programming\\.Net\\Current Projects\\Banking\\backend\\src\\UserAccounts\\Banking.UserAccounts.Application\\Banking.UserAccounts.Application.csproj": {
+              "projectPath": "G:\\Programming\\.Net\\Current Projects\\Banking\\backend\\src\\UserAccounts\\Banking.UserAccounts.Application\\Banking.UserAccounts.Application.csproj"
             }
           }
         }

@@ -21,3 +21,4 @@ G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Ba
 G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Infrastructure\obj\Debug\net8.0\refint\Banking.BankAccounts.Infrastructure.dll
 G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Infrastructure\obj\Debug\net8.0\Banking.BankAccounts.Infrastructure.pdb
 G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\BankAccounts\Banking.BankAccounts.Infrastructure\obj\Debug\net8.0\ref\Banking.BankAccounts.Infrastructure.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Infrastructure\obj\Debug\net8.0\Banking.BankAccounts.Infrastructure.sourcelink.json

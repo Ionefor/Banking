@@ -25,3 +25,8 @@ G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\Shared\Banking.
 G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\Shared\Banking.Core\obj\Debug\net8.0\refint\Banking.Core.dll
 G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\Shared\Banking.Core\obj\Debug\net8.0\Banking.Core.pdb
 G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\Shared\Banking.Core\obj\Debug\net8.0\ref\Banking.Core.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.Core\bin\Debug\net8.0\Banking.SharedKernel.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.Core\bin\Debug\net8.0\Banking.SharedKernel.pdb
+G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.Core\obj\Debug\net8.0\Banking.Core.csproj.AssemblyReference.cache
+G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.Core\obj\Debug\net8.0\Banking.Core.sourcelink.json
+G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.Core\obj\Debug\net8.0\Banking..710DECFE.Up2Date

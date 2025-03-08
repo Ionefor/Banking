@@ -31,3 +31,14 @@ G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\UserAccounts\Ba
 G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\UserAccounts\Banking.UserAccounts.Application\obj\Debug\net8.0\refint\Banking.UserAccounts.Application.dll
 G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\UserAccounts\Banking.UserAccounts.Application\obj\Debug\net8.0\Banking.UserAccounts.Application.pdb
 G:\Programming\.Net\Current Projects\Banking\Banking\backend\src\UserAccounts\Banking.UserAccounts.Application\obj\Debug\net8.0\ref\Banking.UserAccounts.Application.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Application\bin\Debug\net8.0\Banking.Core.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Application\bin\Debug\net8.0\Banking.SharedKernel.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Application\bin\Debug\net8.0\Banking.UserAccounts.Contracts.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Application\bin\Debug\net8.0\Banking.UserAccounts.Domain.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Application\bin\Debug\net8.0\Banking.UserAccounts.Contracts.pdb
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Application\bin\Debug\net8.0\Banking.UserAccounts.Domain.pdb
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Application\bin\Debug\net8.0\Banking.Core.pdb
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Application\bin\Debug\net8.0\Banking.SharedKernel.pdb
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Application\obj\Debug\net8.0\Banking.UserAccounts.Application.csproj.AssemblyReference.cache
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Application\obj\Debug\net8.0\Banking.UserAccounts.Application.sourcelink.json
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Application\obj\Debug\net8.0\Banking..D4BB77B0.Up2Date
