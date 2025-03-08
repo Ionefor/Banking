@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LftDGVhQ2jw=",
+  "dgSpecHash": "R3QhFumRx2Q=",
   "success": true,
-  "projectFilePath": "G:\\Programming\\.Net\\Current Projects\\Banking\\backend\\src\\BankAccounts\\Banking.BankAccounts.Application\\Banking.BankAccounts.Application.csproj",
+  "projectFilePath": "G:\\Programming\\.Net\\Current Projects\\Banking\\Banking\\backend\\src\\BankAccounts\\Banking.BankAccounts.Application\\Banking.BankAccounts.Application.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

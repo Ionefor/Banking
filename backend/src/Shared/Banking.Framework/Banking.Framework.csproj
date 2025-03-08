@@ -12,7 +12,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Banking.Core\Banking.Core.csproj" />
-      <ProjectReference Include="..\Banking.SharedKernel\Banking.SharedKernel.csproj" />
     </ItemGroup>
 
 </Project>

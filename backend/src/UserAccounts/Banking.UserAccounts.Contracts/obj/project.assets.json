@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Programming\\.Net\\Current Projects\\Banking\\backend\\src\\UserAccounts\\Banking.UserAccounts.Contracts\\Banking.UserAccounts.Contracts.csproj",
+      "projectUniqueName": "G:\\Programming\\.Net\\Current Projects\\Banking\\Banking\\backend\\src\\UserAccounts\\Banking.UserAccounts.Contracts\\Banking.UserAccounts.Contracts.csproj",
       "projectName": "Banking.UserAccounts.Contracts",
-      "projectPath": "G:\\Programming\\.Net\\Current Projects\\Banking\\backend\\src\\UserAccounts\\Banking.UserAccounts.Contracts\\Banking.UserAccounts.Contracts.csproj",
+      "projectPath": "G:\\Programming\\.Net\\Current Projects\\Banking\\Banking\\backend\\src\\UserAccounts\\Banking.UserAccounts.Contracts\\Banking.UserAccounts.Contracts.csproj",
       "packagesPath": "C:\\Users\\gusev\\.nuget\\packages\\",
-      "outputPath": "G:\\Programming\\.Net\\Current Projects\\Banking\\backend\\src\\UserAccounts\\Banking.UserAccounts.Contracts\\obj\\",
+      "outputPath": "G:\\Programming\\.Net\\Current Projects\\Banking\\Banking\\backend\\src\\UserAccounts\\Banking.UserAccounts.Contracts\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
