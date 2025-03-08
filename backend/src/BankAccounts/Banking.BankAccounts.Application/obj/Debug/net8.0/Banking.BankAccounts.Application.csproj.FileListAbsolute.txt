@@ -1,0 +1,11 @@
+G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Application\bin\Debug\net8.0\Banking.BankAccounts.Application.deps.json
+G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Application\bin\Debug\net8.0\Banking.BankAccounts.Application.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Application\bin\Debug\net8.0\Banking.BankAccounts.Application.pdb
+G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Application\obj\Debug\net8.0\Banking.BankAccounts.Application.GeneratedMSBuildEditorConfig.editorconfig
+G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Application\obj\Debug\net8.0\Banking.BankAccounts.Application.AssemblyInfoInputs.cache
+G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Application\obj\Debug\net8.0\Banking.BankAccounts.Application.AssemblyInfo.cs
+G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Application\obj\Debug\net8.0\Banking.BankAccounts.Application.csproj.CoreCompileInputs.cache
+G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Application\obj\Debug\net8.0\Banking.BankAccounts.Application.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Application\obj\Debug\net8.0\refint\Banking.BankAccounts.Application.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Application\obj\Debug\net8.0\Banking.BankAccounts.Application.pdb
+G:\Programming\.Net\Current Projects\Banking\backend\src\BankAccounts\Banking.BankAccounts.Application\obj\Debug\net8.0\ref\Banking.BankAccounts.Application.dll

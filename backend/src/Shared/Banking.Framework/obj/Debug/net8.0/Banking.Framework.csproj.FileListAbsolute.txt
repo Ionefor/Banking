@@ -1,0 +1,11 @@
+G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.Framework\bin\Debug\net8.0\Banking.Framework.deps.json
+G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.Framework\bin\Debug\net8.0\Banking.Framework.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.Framework\bin\Debug\net8.0\Banking.Framework.pdb
+G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.Framework\obj\Debug\net8.0\Banking.Framework.GeneratedMSBuildEditorConfig.editorconfig
+G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.Framework\obj\Debug\net8.0\Banking.Framework.AssemblyInfoInputs.cache
+G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.Framework\obj\Debug\net8.0\Banking.Framework.AssemblyInfo.cs
+G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.Framework\obj\Debug\net8.0\Banking.Framework.csproj.CoreCompileInputs.cache
+G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.Framework\obj\Debug\net8.0\Banking.Framework.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.Framework\obj\Debug\net8.0\refint\Banking.Framework.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.Framework\obj\Debug\net8.0\Banking.Framework.pdb
+G:\Programming\.Net\Current Projects\Banking\backend\src\Shared\Banking.Framework\obj\Debug\net8.0\ref\Banking.Framework.dll

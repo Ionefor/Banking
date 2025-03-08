@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Banking.UserAccounts.Domain/1.0.0": {
+        "runtime": {
+          "Banking.UserAccounts.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Banking.UserAccounts.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

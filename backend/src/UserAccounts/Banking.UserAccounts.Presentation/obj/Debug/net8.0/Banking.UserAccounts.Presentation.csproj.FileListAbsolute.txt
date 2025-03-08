@@ -1,0 +1,11 @@
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Presentation\bin\Debug\net8.0\Banking.UserAccounts.Presentation.deps.json
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Presentation\bin\Debug\net8.0\Banking.UserAccounts.Presentation.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Presentation\bin\Debug\net8.0\Banking.UserAccounts.Presentation.pdb
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Presentation\obj\Debug\net8.0\Banking.UserAccounts.Presentation.GeneratedMSBuildEditorConfig.editorconfig
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Presentation\obj\Debug\net8.0\Banking.UserAccounts.Presentation.AssemblyInfoInputs.cache
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Presentation\obj\Debug\net8.0\Banking.UserAccounts.Presentation.AssemblyInfo.cs
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Presentation\obj\Debug\net8.0\Banking.UserAccounts.Presentation.csproj.CoreCompileInputs.cache
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Presentation\obj\Debug\net8.0\Banking.UserAccounts.Presentation.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Presentation\obj\Debug\net8.0\refint\Banking.UserAccounts.Presentation.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Presentation\obj\Debug\net8.0\Banking.UserAccounts.Presentation.pdb
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Presentation\obj\Debug\net8.0\ref\Banking.UserAccounts.Presentation.dll

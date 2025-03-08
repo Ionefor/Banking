@@ -1,0 +1,11 @@
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Contracts\bin\Debug\net8.0\Banking.UserAccounts.Contracts.deps.json
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Contracts\bin\Debug\net8.0\Banking.UserAccounts.Contracts.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Contracts\bin\Debug\net8.0\Banking.UserAccounts.Contracts.pdb
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Contracts\obj\Debug\net8.0\Banking.UserAccounts.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Contracts\obj\Debug\net8.0\Banking.UserAccounts.Contracts.AssemblyInfoInputs.cache
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Contracts\obj\Debug\net8.0\Banking.UserAccounts.Contracts.AssemblyInfo.cs
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Contracts\obj\Debug\net8.0\Banking.UserAccounts.Contracts.csproj.CoreCompileInputs.cache
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Contracts\obj\Debug\net8.0\Banking.UserAccounts.Contracts.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Contracts\obj\Debug\net8.0\refint\Banking.UserAccounts.Contracts.dll
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Contracts\obj\Debug\net8.0\Banking.UserAccounts.Contracts.pdb
+G:\Programming\.Net\Current Projects\Banking\backend\src\UserAccounts\Banking.UserAccounts.Contracts\obj\Debug\net8.0\ref\Banking.UserAccounts.Contracts.dll
