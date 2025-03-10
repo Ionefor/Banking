@@ -53,7 +53,7 @@ public class BankAccount : SoftDeletableEntity<AccountId>
         if (_wallets.Contains(wallet))
         {
             return Errors.Extra.
-                AlreadyExists(new ErrorParameters.Extra.ValueAlreadyExists(nameof(Wallet)));
+                AlreadyExists(new ErrorParameters.ValueAlreadyExists(nameof(Wallet)));
         }
         
         _wallets.Add(wallet);
@@ -95,7 +95,7 @@ public class BankAccount : SoftDeletableEntity<AccountId>
         if (_cards.Contains(card))
         {
             return Errors.Extra.
-                AlreadyExists(new ErrorParameters.Extra.ValueAlreadyExists(nameof(Card)));
+                AlreadyExists(new ErrorParameters.ValueAlreadyExists(nameof(Card)));
         }
         
         _cards.Add(card);

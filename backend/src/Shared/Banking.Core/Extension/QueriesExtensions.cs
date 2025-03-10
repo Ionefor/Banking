@@ -24,6 +24,36 @@ public static class QueriesExtensions
             TotalCount = totalCount
         };
     }
+    
+    public static async Task<PageList<T1, T2>> ToPagedList<T1, T2>(
+        this IQueryable<T1> firstSource,
+        IQueryable<T2> secondSource,
+        int page,
+        int pageSize,
+        CancellationToken cancellationToken)
+    {
+        var countFirst = await firstSource.CountAsync(cancellationToken);
+        var countSecond = await secondSource.CountAsync(cancellationToken);
+        
+        var firstItems = await firstSource
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync(cancellationToken);
+
+        var secondItems = await secondSource
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync(cancellationToken);
+        
+        return new PageList<T1, T2>
+        {
+            FirstItems = firstItems,
+            SecondItems = secondItems,
+            Page = page,
+            PageSize = pageSize,
+            TotalCount = countFirst + countSecond
+        };
+    }
 
     public static IQueryable<T> WhereIf<T>(
         this IQueryable<T> source,

@@ -9,7 +9,7 @@ public static class Constants
         public const int MaxLargeTextLength = 2000;
       
         public const int MaxDegreeOfParallelism = 10;
-        public const string BucketNamePhotos = "Photos";
+        public const string BucketNamePhotos = "photos";
         public const string Database = "database";
       
         public const string ConfigurationsWrite = "Configurations.Write";
@@ -23,6 +23,8 @@ public static class Constants
 
     public static class Accounts
     {
+        public const string Individual = nameof(Individual);
+        public const string Corporate = nameof(Corporate);
         public const string AccountsPath = "etc/accounts.json";
     }
 }

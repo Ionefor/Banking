@@ -1,4 +1,4 @@
-﻿using Banking.UserAccounts.Infrastructure.Seeding;
+﻿using Banking.Users.Infrastructure.Seeding;
 
 namespace Banking.Web.Extensions;
 

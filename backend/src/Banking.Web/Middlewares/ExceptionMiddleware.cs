@@ -20,7 +20,7 @@ public class ExceptionMiddleware
         }
         catch (Exception ex)
         {
-            var error = Errors.General.InternalServer(new ErrorParameters.General.InternalServer(ex.Message));
+            var error = Errors.General.InternalServer(new ErrorParameters.InternalServer(ex.Message));
             var envelope = Envelope.Error(error);
 
             context.Response.ContentType = "application/json";
