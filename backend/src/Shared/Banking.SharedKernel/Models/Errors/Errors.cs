@@ -4,7 +4,7 @@ public static class Errors
 {
     public static class General
     {
-        public static Error ValueIsInvalid(ErrorParameters.General.ValueIsInvalid? parameters = null)
+        public static Error ValueIsInvalid(ErrorParameters.ValueIsInvalid? parameters = null)
         {
             return ErrorFactory.Create(
                 ErrorConstants.Code.ValueIsInvalid,
@@ -14,17 +14,18 @@ public static class Errors
                 parameters?.SubjectName);
         }
 
-        public static Error NotFound(ErrorParameters.General.NotFound? parameters = null)
+        public static Error NotFound(ErrorParameters.NotFound? parameters = null)
         {
             return ErrorFactory.Create(
                 ErrorConstants.Code.NotFound,
                 ErrorConstants.GeneralMessage.NotFound,
                 ErrorType.NotFound,
                 parameters is null ? null
-                    : $"{parameters.ObjectName} record not found with {parameters.SubjectType}: {parameters.SubjectValue}");
+                    : $"{parameters.ObjectName} record not found with {parameters.SubjectType}:" +
+                      $" {parameters.SubjectValue}");
         }
 
-        public static Error ValueIsRequired(ErrorParameters.General.ValueIsRequired? parameters = null)
+        public static Error ValueIsRequired(ErrorParameters.ValueIsRequired? parameters = null)
         {
             return ErrorFactory.Create(
                 ErrorConstants.Code.ValueIsRequired,
@@ -34,7 +35,7 @@ public static class Errors
                     : $"{parameters.SubjectName} cannot be null or empty");
         }
 
-        public static Error InternalServer(ErrorParameters.General.InternalServer? parameters = null)
+        public static Error InternalServer(ErrorParameters.InternalServer? parameters = null)
         {
             return ErrorFactory.Create(
                 ErrorConstants.Code.InternalServer,
@@ -43,7 +44,7 @@ public static class Errors
                 parameters?.Message);
         }
 
-        public static Error Failed(ErrorParameters.General.Failed? parameters = null)
+        public static Error Failed(ErrorParameters.Failed? parameters = null)
         {
             return ErrorFactory.Create(
                 ErrorConstants.Code.Failed,
@@ -55,7 +56,7 @@ public static class Errors
 
     public static class Extra
     {
-        public static Error RoleIsInvalid(ErrorParameters.Extra.RoleIsInvalid? parameters = null)
+        public static Error RoleIsInvalid(ErrorParameters.RoleIsInvalid? parameters = null)
         {
             return ErrorFactory.Create(
                 ErrorConstants.Code.ValueIsInvalid,
@@ -64,7 +65,7 @@ public static class Errors
                 parameters?.Message);
         }
 
-        public static Error InvalidDeleteOperation(ErrorParameters.Extra.InvalidDeleteOperation? parameters = null)
+        public static Error InvalidDeleteOperation(ErrorParameters.InvalidDeleteOperation? parameters = null)
         {
             return ErrorFactory.Create(
                 ErrorConstants.Code.DeleteIsInvalid,
@@ -98,7 +99,7 @@ public static class Errors
                 ErrorType.Validation);
         }
 
-        public static Error AlreadyExists(ErrorParameters.Extra.ValueAlreadyExists? parameters = null)
+        public static Error AlreadyExists(ErrorParameters.ValueAlreadyExists? parameters = null)
         {
             return ErrorFactory.Create(
                 ErrorConstants.Code.ValueAlreadyExists,

@@ -1,9 +1,12 @@
-﻿using Banking.BankAccounts.Application;
+﻿using Banking.Accounts.Application;
+using Banking.Accounts.Infrastructure;
+using Banking.Accounts.Presentation;
+using Banking.BankAccounts.Application;
 using Banking.BankAccounts.Infrastructure;
 using Banking.BankAccounts.Presentation;
-using Banking.UserAccounts.Application;
-using Banking.UserAccounts.Infrastructure;
-using Banking.UserAccounts.Presentation;
+using Banking.Users.Application;
+using Banking.Users.Infrastructure;
+using Banking.Users.Presentation;
 using FluentValidation;
 using Microsoft.OpenApi.Models;
 using Serilog;
@@ -18,6 +21,7 @@ public static class AddServicesExtension
     {
         services.AddBankModule(configuration).
             AddUserModule(configuration).
+            AddAccountsModule(configuration).
             AddCustomSwaggerGen().
             AddValidation(configuration).
             AddLogging(configuration);
@@ -39,7 +43,7 @@ public static class AddServicesExtension
         {
             c.SwaggerDoc("v1", new OpenApiInfo
             {
-                Title = "PawShelter API",
+                Title = "Banking API",
                 Version = "1"
             });
 
@@ -119,6 +123,18 @@ public static class AddServicesExtension
             AddUserInfrastructure(configuration).
             AddUserApplication().
             AddUserPresentation();
+
+        return services;
+    }
+    
+    private static IServiceCollection AddAccountsModule(
+        this IServiceCollection services,
+        IConfiguration configuration)
+    {
+        services.
+            AddAccountsInfrastructure(configuration).
+            AddAccountsApplication().
+            AddAccountsPresentation();
 
         return services;
     }

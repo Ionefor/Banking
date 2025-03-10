@@ -13,7 +13,7 @@ public static class ValidationExtension
             let errorMessage = validationError.ErrorMessage
             let error = Error.Deserialize(errorMessage)
             select Errors.General.ValueIsInvalid(
-                new ErrorParameters.General.ValueIsInvalid(nameof(validationError.PropertyName)));
+                new ErrorParameters.ValueIsInvalid(nameof(validationError.PropertyName)));
 
         return errors.ToList();
     }

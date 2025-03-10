@@ -19,7 +19,7 @@ public class Ccv : ComparableValueObject
         if (string.IsNullOrWhiteSpace(code) || code.Length != 3 || code.All(char.IsDigit))
         {
             return Errors.General.
-                ValueIsInvalid(new ErrorParameters.General.ValueIsInvalid(nameof(Ccv)));
+                ValueIsInvalid(new ErrorParameters.ValueIsInvalid(nameof(Ccv)));
         }
         
         return new Ccv(code);

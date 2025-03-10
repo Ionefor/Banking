@@ -22,7 +22,7 @@ public class PaymentDetails : ComparableValueObject
             details.All(char.IsDigit))
         {
             return Errors.General.
-                ValueIsInvalid(new ErrorParameters.General.ValueIsInvalid(nameof(PaymentDetails)));
+                ValueIsInvalid(new ErrorParameters.ValueIsInvalid(nameof(PaymentDetails)));
         }
         
         return new PaymentDetails(details);

@@ -19,7 +19,7 @@ public class Balance : ComparableValueObject
         if (value < 0)
         {
             return Errors.General.
-                ValueIsInvalid(new ErrorParameters.General.ValueIsInvalid(nameof(Balance)));
+                ValueIsInvalid(new ErrorParameters.ValueIsInvalid(nameof(Balance)));
         }
         
         return new Balance(value);

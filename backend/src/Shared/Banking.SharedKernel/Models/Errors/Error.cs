@@ -18,7 +18,8 @@ public record Error
         InvalidField = invalidField;
     }
     
-    internal static Error CreateError(string code, string message, ErrorType type, string? invalidField = null)
+    internal static Error CreateError(
+        string code, string message, ErrorType type, string? invalidField = null)
     {
         return new Error(code, message, type, invalidField)
         {

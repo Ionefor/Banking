@@ -2,6 +2,7 @@
 
 public enum ModulesName
 {
-    UserAccounts,
-    BankAccounts
+    Users,
+    BankAccounts,
+    Accounts
 }

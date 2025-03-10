@@ -3,6 +3,7 @@ using Banking.BankAccounts.Presentation.Requests.Accounts;
 using Banking.Core.Models;
 using Banking.Framework;
 using Microsoft.AspNetCore.Mvc;
+using ApplicationController = Banking.Framework.Controller.ApplicationController;
 
 namespace Banking.BankAccounts.Presentation.Controllers;
 

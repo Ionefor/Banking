@@ -9,13 +9,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\BankAccounts\Banking.BankAccounts.Infrastructure\Banking.BankAccounts.Infrastructure.csproj" />
-      <ProjectReference Include="..\BankAccounts\Banking.BankAccounts.Presentation\Banking.BankAccounts.Presentation.csproj" />
-      <ProjectReference Include="..\UserAccounts\Banking.UserAccounts.Infrastructure\Banking.UserAccounts.Infrastructure.csproj" />
-      <ProjectReference Include="..\UserAccounts\Banking.UserAccounts.Presentation\Banking.UserAccounts.Presentation.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
       <Content Include="..\..\.dockerignore">
         <Link>.dockerignore</Link>
       </Content>
@@ -37,6 +30,15 @@
       <PackageReference Include="Serilog.Enrichers.Thread" Version="4.0.0" />
       <PackageReference Include="Serilog.Sinks.Seq" Version="9.0.0" />
       <PackageReference Include="Swashbuckle.AspNetCore" Version="7.3.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Accounts\Banking.Accounts.Infrastructure\Banking.Accounts.Infrastructure.csproj" />
+      <ProjectReference Include="..\Accounts\Banking.Accounts.Presentation\Banking.Accounts.Presentation.csproj" />
+      <ProjectReference Include="..\BankAccounts\Banking.BankAccounts.Infrastructure\Banking.BankAccounts.Infrastructure.csproj" />
+      <ProjectReference Include="..\BankAccounts\Banking.BankAccounts.Presentation\Banking.BankAccounts.Presentation.csproj" />
+      <ProjectReference Include="..\Users\Banking.Users.Infrastructure\Banking.Users.Infrastructure.csproj" />
+      <ProjectReference Include="..\Users\Banking.Users.Presentation\Banking.Users.Presentation.csproj" />
     </ItemGroup>
 
 </Project>

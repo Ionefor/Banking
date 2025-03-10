@@ -1,4 +1,5 @@
 ﻿using Banking.Framework;
+using ApplicationController = Banking.Framework.Controller.ApplicationController;
 
 namespace Banking.BankAccounts.Presentation.Controllers;
 
