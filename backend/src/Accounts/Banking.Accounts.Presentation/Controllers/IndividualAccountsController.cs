@@ -35,7 +35,7 @@ public class IndividualAccountsController : ApplicationController
         [FromServices] UpdateFullNameHandler handler,
         CancellationToken cancellationToken)
     {
-        return await HandleRequest(
+        return await HandleCommand(
             userId,
             request,
             (r, id) => r.ToCommand(id),
@@ -54,7 +54,7 @@ public class IndividualAccountsController : ApplicationController
         await using var fileProcessor = new FormFileProcessor();
         var fileDto = fileProcessor.Process(request.File);
         
-        return await HandleRequest(
+        return await HandleCommand(
             userId,
             request,
             (r, id) => r.ToCommand(id, fileDto),

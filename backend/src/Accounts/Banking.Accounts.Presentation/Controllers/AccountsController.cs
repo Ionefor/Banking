@@ -25,7 +25,7 @@ public class AccountsController : ApplicationController
         [FromServices] DeleteUserAccountHandler handler,
         CancellationToken cancellationToken)
     {
-        return await HandleRequest(
+        return await HandleCommand(
             userId,
             id => new DeleteUserAccountCommand(id),
             handler.Handle,
@@ -75,7 +75,7 @@ public class AccountsController : ApplicationController
         [FromServices] UpdatePhoneNumberHandler handler,
         CancellationToken cancellationToken)
     {
-        return await HandleRequest(
+        return await HandleCommand(
             userId,
             request,
             (r, id) => r.ToCommand(id),
@@ -91,7 +91,7 @@ public class AccountsController : ApplicationController
         [FromServices] UpdateEmailHandler handler,
         CancellationToken cancellationToken)
     {
-        return await HandleRequest(
+        return await HandleCommand(
             userId,
             request,
             (r, id) => r.ToCommand(id),
@@ -107,7 +107,7 @@ public class AccountsController : ApplicationController
         [FromServices] UpdateAddressHandler handler,
         CancellationToken cancellationToken)
     {
-        return await HandleRequest(
+        return await HandleCommand(
             userId,
             request,
             (r, id) => r.ToCommand(id),

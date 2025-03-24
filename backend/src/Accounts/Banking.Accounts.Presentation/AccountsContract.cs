@@ -2,6 +2,7 @@
 using Banking.Accounts.Application.PhotoProvider;
 using Banking.Accounts.Contracts;
 using Banking.Accounts.Contracts.Dto.Commands;
+using Banking.Accounts.Contracts.Dto.Models;
 using Banking.Accounts.Domain;
 using Banking.Core.Abstractions;
 using Banking.Core.Dto;
@@ -10,6 +11,7 @@ using Banking.SharedKernel.Definitions;
 using Banking.SharedKernel.Models.Errors;
 using Banking.SharedKernel.ValueObjects;
 using CSharpFunctionalExtensions;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Banking.Accounts.Presentation;
@@ -166,5 +168,35 @@ public class AccountsContract : IAccountsContract
         await _unitOfWork.SaveChangesAsync(cancellationToken);
         
         return UnitResult.Success<ErrorList>();
+    }
+
+    public async Task<Result<IndividualAccountDto, Error>> GetIndividualAccount(
+        Guid accountId, CancellationToken cancellationToken)
+    {
+        var individualAccount = await _readDbContext.IndividualAccounts.
+            FirstOrDefaultAsync(c => c.Id == accountId, cancellationToken);
+
+        if (individualAccount is null)
+        {
+            return Errors.General.NotFound(new ErrorParameters.NotFound
+                (nameof(IndividualAccount), nameof(accountId), accountId));
+        }
+
+        return individualAccount;
+    }
+
+    public async Task<Result<CorporateAccountDto, Error>> GetCorporateAccount(
+        Guid accountId, CancellationToken cancellationToken)
+    {
+        var corporateAccount = await _readDbContext.CorporateAccounts.
+            FirstOrDefaultAsync(c => c.Id == accountId, cancellationToken);
+        
+        if (corporateAccount is null)
+        {
+            return Errors.General.NotFound(new ErrorParameters.NotFound
+                (nameof(CorporateAccount), nameof(accountId), accountId));
+        }
+
+        return corporateAccount;
     }
 }

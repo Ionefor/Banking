@@ -3,6 +3,6 @@
 public enum ModulesName
 {
     Users,
-    BankAccounts,
+    ClientAccounts,
     Accounts
 }

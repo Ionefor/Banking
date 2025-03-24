@@ -2,8 +2,8 @@
 using Banking.Accounts.Infrastructure;
 using Banking.Accounts.Presentation;
 using Banking.BankAccounts.Application;
-using Banking.BankAccounts.Infrastructure;
-using Banking.BankAccounts.Presentation;
+using Banking.ClientAccounts.Infrastructure;
+using Banking.ClientAccounts.Presentation;
 using Banking.Users.Application;
 using Banking.Users.Infrastructure;
 using Banking.Users.Presentation;
