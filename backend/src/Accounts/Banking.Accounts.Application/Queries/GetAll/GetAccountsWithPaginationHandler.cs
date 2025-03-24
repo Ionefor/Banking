@@ -25,23 +25,23 @@ public class GetAccountsWithPaginationHandler :
         var individualAccounts = _readDbContext.IndividualAccounts;
         var corporateAccounts = _readDbContext.CorporateAccounts;
         
-        // if (query.FilteringParams is not null)
-        // {
-        //     if (query.FilteringParams.AccountType == AccountType.Individual)
-        //     {
-        //         individualAccounts = SortFilterIndividualQuery(individualAccounts, query);
-        //     }
-        //     else if (query.FilteringParams.AccountType == AccountType.Corporate)
-        //     {
-        //         corporateAccounts = SortFilterCorporateQuery(corporateAccounts, query);
-        //     }
-        //     else
-        //     {
-        //         individualAccounts = SortFilterIndividualQuery(individualAccounts, query);
-        //         corporateAccounts = SortFilterCorporateQuery(corporateAccounts, query);
-        //     }
-        // }
-        //
+        if (query.FilteringParams is not null)
+        {
+            if (query.FilteringParams.AccountType == AccountType.Individual)
+            {
+                individualAccounts = SortFilterIndividualQuery(individualAccounts, query);
+            }
+            else if (query.FilteringParams.AccountType == AccountType.Corporate)
+            {
+                corporateAccounts = SortFilterCorporateQuery(corporateAccounts, query);
+            }
+            else
+            {
+                individualAccounts = SortFilterIndividualQuery(individualAccounts, query);
+                corporateAccounts = SortFilterCorporateQuery(corporateAccounts, query);
+            }
+        }
+        
         return await individualAccounts.ToPagedList(corporateAccounts,
             query.PaginationParams.Page,
             query.PaginationParams.PageSize,

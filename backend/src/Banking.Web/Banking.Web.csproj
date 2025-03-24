@@ -35,8 +35,8 @@
     <ItemGroup>
       <ProjectReference Include="..\Accounts\Banking.Accounts.Infrastructure\Banking.Accounts.Infrastructure.csproj" />
       <ProjectReference Include="..\Accounts\Banking.Accounts.Presentation\Banking.Accounts.Presentation.csproj" />
-      <ProjectReference Include="..\BankAccounts\Banking.BankAccounts.Infrastructure\Banking.BankAccounts.Infrastructure.csproj" />
-      <ProjectReference Include="..\BankAccounts\Banking.BankAccounts.Presentation\Banking.BankAccounts.Presentation.csproj" />
+      <ProjectReference Include="..\ClientAccounts\Banking.ClientAccounts.Infrastructure\Banking.ClientAccounts.Infrastructure.csproj" />
+      <ProjectReference Include="..\ClientAccounts\Banking.ClientAccounts.Presentation\Banking.ClientAccounts.Presentation.csproj" />
       <ProjectReference Include="..\Users\Banking.Users.Infrastructure\Banking.Users.Infrastructure.csproj" />
       <ProjectReference Include="..\Users\Banking.Users.Presentation\Banking.Users.Presentation.csproj" />
     </ItemGroup>

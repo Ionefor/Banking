@@ -1,4 +1,5 @@
-﻿using CSharpFunctionalExtensions;
+﻿using Banking.SharedKernel.Models.Errors;
+using CSharpFunctionalExtensions;
 
 namespace Banking.SharedKernel.Models.Abstractions;
 

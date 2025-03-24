@@ -1,5 +1,6 @@
 ﻿
 using Banking.Accounts.Contracts.Dto.Commands;
+using Banking.Accounts.Contracts.Dto.Models;
 using Banking.Core.Dto;
 using Banking.SharedKernel.Models.Errors;
 using CSharpFunctionalExtensions;
@@ -25,4 +26,11 @@ public interface IAccountsContract
         string contactEmail,
         string contactPhone,
         CancellationToken cancellationToken = default);
+
+    public Task<Result<IndividualAccountDto, Error>> GetIndividualAccount(
+        Guid accountId, CancellationToken cancellationToken);
+
+    public Task<Result<CorporateAccountDto, Error>> GetCorporateAccount(
+        Guid accountId, CancellationToken cancellationToken);
+
 }
