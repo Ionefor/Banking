@@ -6,7 +6,7 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddBankPresentation(this IServiceCollection services)
     {
-       // return services.AddScoped<IVolunteersContract, VolunteersContract>();
+       // return services.AddScoped<IContract, Contract>();
        return services;
     }
 }

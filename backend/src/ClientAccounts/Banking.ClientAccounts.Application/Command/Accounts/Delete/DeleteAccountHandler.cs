@@ -15,20 +15,17 @@ namespace Banking.BankAccounts.Application.Command.Accounts.Delete;
 public class DeleteAccountHandler : 
     ICommandHandler<Guid, DeleteAccountCommand>
 {
-    private readonly IValidator<DeleteAccountCommand> _validator;
     private readonly ILogger<DeleteAccountHandler> _logger;
     private readonly IReadDbContext _readDbContext;
     private readonly IClientAccountRepository _repository;
     private readonly IUnitOfWork _unitOfWork;
 
     public DeleteAccountHandler(
-        IValidator<DeleteAccountCommand> validator,
         ILogger<DeleteAccountHandler> logger,
         IReadDbContext readDbContext,
         IClientAccountRepository repository,
         [FromKeyedServices(ModulesName.ClientAccounts)]IUnitOfWork unitOfWork)
     {
-        _validator = validator;
         _logger = logger;
         _readDbContext = readDbContext;
         _repository = repository;
@@ -39,15 +36,12 @@ public class DeleteAccountHandler :
         DeleteAccountCommand command,
         CancellationToken cancellationToken = default)
     {
-        var validationResult = await _validator.
-            ValidateAsync(command, cancellationToken);
-        
-        if (!validationResult.IsValid)
-            return validationResult.ToErrorList();
-
         var clientAccountExist = await _readDbContext.ClientAccounts.
             AnyAsync(c => c.Id == command.ClientAccountId, cancellationToken);
 
+        var a = _readDbContext.ClientAccounts;
+        var aa = command.ClientAccountId;
+        
         if (!clientAccountExist)
         {
             return Errors.General.NotFound(

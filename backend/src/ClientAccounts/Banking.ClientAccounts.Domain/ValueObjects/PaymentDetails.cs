@@ -19,7 +19,7 @@ public class PaymentDetails : ComparableValueObject
     {
         if (string.IsNullOrWhiteSpace(details) ||
             details.Length != Constants.Shared.MaxLowTextLength ||
-            details.All(char.IsDigit))
+            !details.All(char.IsDigit))
         {
             return Errors.General.
                 ValueIsInvalid(new ErrorParameters.ValueIsInvalid(nameof(PaymentDetails)));

@@ -13,7 +13,7 @@ public class  ClientAccountDtoConfiguration : IEntityTypeConfiguration<ClientAcc
 
         builder.HasKey(a => a.Id);
         
-        builder.Property(a => a.AccountId);
+        builder.Property(a => a.UserAccountId);
         
         builder.Property(a => a.UserAccountType);
         

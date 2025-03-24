@@ -40,7 +40,7 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
             .OnDelete(DeleteBehavior.Cascade);
         
         builder.Property(c => c.ValidThru).
-            IsRequired().HasColumnName("validThru");
+            IsRequired().HasColumnName("valid_thru");
         
         builder.Property(c => c.IsMain).
             IsRequired().HasColumnName("is_main");

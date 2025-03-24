@@ -13,20 +13,18 @@ namespace Banking.ClientAccounts.Presentation.Controllers;
 
 public class ClientAccountsController : ApplicationController
 {
-    [HttpPost("{userAccountId:guid}")]
+    [HttpPost("Accounts/{userAccountId:guid}")]
     public async Task<ActionResult<Guid>> Create(
         [FromRoute] Guid userAccountId,
         [FromServices] CreateClientAccountHandler handler,
         CancellationToken cancellationToken)
     {
-        var command = new CreateClientAccountCommand(userAccountId);
-        
-        var result = await handler.Handle(command, cancellationToken);
-    
-        if (result.IsFailure)
-            return BadRequest(Envelope.Error(result.Error));
-    
-        return Created("", Envelope.Ok(result.Value));
+        return await HandleCommand(
+            userAccountId,
+            cId => new CreateClientAccountCommand(cId),
+            handler.Handle,
+            error => BadRequest(Envelope.Error(error)),
+            cancellationToken);
     }
     
     [HttpDelete("{clientAccountId:guid}")]
@@ -35,46 +33,40 @@ public class ClientAccountsController : ApplicationController
         [FromServices] DeleteClientAccountHandler handler,
         CancellationToken cancellationToken)
     {
-        var command = new DeleteClientAccountCommand(clientAccountId);
-        
-        var result = await handler.Handle(command, cancellationToken);
-    
-        if (result.IsFailure)
-            return BadRequest(Envelope.Error(result.Error));
-    
-        return Ok(result.Value);
+        return await HandleCommand(
+            clientAccountId,
+            cId => new DeleteClientAccountCommand(cId),
+            handler.Handle,
+            error => BadRequest(Envelope.Error(error)),
+            cancellationToken);
     }
     
-    [HttpDelete("{clientAccountId:guid}")]
+    [HttpDelete("{clientAccountId:guid}/soft")]
     public async Task<ActionResult<Guid>> SoftDelete(
         [FromRoute] Guid clientAccountId,
         [FromServices] SoftDeleteCAHandler handler,
         CancellationToken cancellationToken)
     {
-        var command = new SoftDeleteCACommand(clientAccountId);
-        
-        var result = await handler.Handle(command, cancellationToken);
-    
-        if (result.IsFailure)
-            return BadRequest(Envelope.Error(result.Error));
-    
-        return Ok(result.Value);
+        return await HandleCommand(
+            clientAccountId,
+            cId => new SoftDeleteCACommand(cId),
+            handler.Handle,
+            error => BadRequest(Envelope.Error(error)),
+            cancellationToken);
     }
     
-    [HttpPost("{clientAccountId:guid}")]
+    [HttpPost("{clientAccountId:guid}/restore")]
     public async Task<ActionResult<Guid>> Restore(
         [FromRoute] Guid clientAccountId,
         [FromServices] RestoreClientAccountHandler handler,
         CancellationToken cancellationToken)
     {
-        var command = new RestoreClientAccountCommand(clientAccountId);
-        
-        var result = await handler.Handle(command, cancellationToken);
-    
-        if (result.IsFailure)
-            return BadRequest(Envelope.Error(result.Error));
-    
-        return Ok(result.Value);
+        return await HandleCommand(
+            clientAccountId,
+            cId => new RestoreClientAccountCommand(cId),
+            handler.Handle,
+            error => BadRequest(Envelope.Error(error)),
+            cancellationToken);
     }
     
     [HttpGet]
@@ -94,16 +86,16 @@ public class ClientAccountsController : ApplicationController
     [HttpGet("{userId:guid}")]
     public async Task<ActionResult<Guid>> GetByUserId(
         [FromServices] GetClientAccountByIdHandler handler,
-        [FromRoute] Guid accountId,
+        [FromRoute] Guid userId,
         CancellationToken cancellationToken)
     {
         var result = await HandleQuery(
-            accountId,
+            userId,
             id => new GetClientAccountByIdQuery(id), 
             handler.Handle,
             error => BadRequest(Envelope.Error(error)),
             cancellationToken);
-
+    
         return result.Result;
     }
 }

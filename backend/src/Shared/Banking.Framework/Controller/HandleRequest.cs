@@ -25,24 +25,6 @@ public partial class ApplicationController : ControllerBase
     }
     
     protected async Task<ActionResult<TResponse>> HandleCommand<TRequest, TCommand, TResponse>(
-        Guid cId,
-        Guid aId,
-        TRequest request,
-        Func<TRequest, Guid, Guid, TCommand> createCommand,
-        Func<TCommand, CancellationToken, Task<Result<TResponse, ErrorList>>> handleCommand,
-        Func<ErrorList, ObjectResult> createErrorResult,
-        CancellationToken cancellationToken)
-    {
-        var command = createCommand(request, cId, aId);
-        var result = await handleCommand(command, cancellationToken);
-        
-        if (result.IsFailure)
-            return createErrorResult(result.Error);
-
-        return Ok(result.Value);
-    }
-    
-    protected async Task<ActionResult<TResponse>> HandleCommand<TRequest, TCommand, TResponse>(
         TRequest request,
         Func<TRequest, TCommand> createCommand,
         Func<TCommand, CancellationToken, Task<Result<TResponse, ErrorList>>> handleCommand,
@@ -57,14 +39,14 @@ public partial class ApplicationController : ControllerBase
         return Ok(result.Value);
     }
     
-    protected async Task<ActionResult<TResponse>> HandleCommand<TCommand, TResponse>(
-        Guid userId,
-        Func<Guid, TCommand> createCommand,
+    protected async Task<ActionResult<TResponse>> HandleCommand<TRequest, TCommand, TResponse>(
+        TRequest request,
+        Func<TRequest, TCommand> createCommand,
         Func<TCommand, CancellationToken, Task<Result<TResponse, ErrorList>>> handleCommand,
         Func<ErrorList, ObjectResult> createErrorResult,
         CancellationToken cancellationToken)
     {
-        var command = createCommand!(userId);
+        var command = createCommand!(request);
         var result = await handleCommand(command, cancellationToken);
         
         if (result.IsFailure)

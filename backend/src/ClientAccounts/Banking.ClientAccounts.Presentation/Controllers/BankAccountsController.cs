@@ -9,9 +9,9 @@ using ApplicationController = Banking.Framework.Controller.ApplicationController
 
 namespace Banking.ClientAccounts.Presentation.Controllers;
 
-public class AccountsController : ApplicationController
+public class BankAccountsController : ApplicationController
 {
-    [HttpPost]
+    [HttpPost("/ClientAccounts/{clientAccountId:guid}/")]
     public async Task<ActionResult<Guid>> AddAccount(
         [FromRoute] Guid clientAccountId,
         [FromBody] AddAccountRequest request,
@@ -19,15 +19,14 @@ public class AccountsController : ApplicationController
         CancellationToken cancellationToken)
     {
         return await HandleCommand(
-            clientAccountId,
             request,
-            (r, cId) => r.ToCommand(cId),
+            r => r.ToCommand(clientAccountId),
             handler.Handle,
             error => BadRequest(Envelope.Error(error)),
             cancellationToken);
     }
     
-    [HttpDelete]
+    [HttpDelete("/{clientAccountId:guid}/accounts/{accountId:guid}")]
     public async Task<ActionResult<Guid>> DeleteAccount(
         [FromRoute] Guid clientAccountId,
         [FromRoute] Guid accountId,
@@ -37,13 +36,13 @@ public class AccountsController : ApplicationController
         return await HandleCommand(
             clientAccountId,
             accountId,
-            (cId, aId) => new DeleteAccountCommand(cId, aId),
+            (cId, aId) => new DeleteAccountCommand(clientAccountId, accountId),
             handler.Handle,
             error => BadRequest(Envelope.Error(error)),
             cancellationToken);
     }
     
-    [HttpGet]
+    [HttpGet("/{clientAccountId:guid}/accounts")]
     public async Task<ActionResult> GetByClientAccountId(
         [FromQuery] GetAccountsWithPaginationRequest request,
         [FromRoute] Guid clientAccountId,
@@ -53,12 +52,12 @@ public class AccountsController : ApplicationController
         return await HandleQuery(
             request,
             r => r.ToQuery(clientAccountId), 
-            handler.Handle, 
+            handler.Handle,
             cancellationToken
         );
     }
     
-    [HttpGet]
+    [HttpGet("/{clientAccountId:guid}/accounts/{accountId:guid}")]
     public async Task<ActionResult<Guid>> GetById(
         [FromRoute] Guid clientAccountId,
         [FromRoute] Guid accountId,
@@ -68,11 +67,11 @@ public class AccountsController : ApplicationController
         var result = await HandleQuery(
             clientAccountId,
             accountId,
-            (c, a) => new GetAccountByIdQuery(c, a), 
+            (c, a) => new GetAccountByIdQuery(clientAccountId, accountId), 
             handler.Handle,
             error => BadRequest(Envelope.Error(error)),
             cancellationToken);
-
+    
         return result.Result;
     }
 }

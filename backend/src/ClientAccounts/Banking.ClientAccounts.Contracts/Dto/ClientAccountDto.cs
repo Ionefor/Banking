@@ -6,7 +6,7 @@ public class ClientAccountDto
 {
     public Guid Id { get; init; }
     
-    public Guid AccountId { get; init; }
+    public Guid UserAccountId { get; init; }
     
     public bool IsDeleted { get; init; }
     

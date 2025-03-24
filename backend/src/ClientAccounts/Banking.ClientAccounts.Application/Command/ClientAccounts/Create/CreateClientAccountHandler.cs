@@ -51,7 +51,7 @@ public class CreateClientAccountHandler :
             return validationResult.ToErrorList();
 
         var clientAccountExist = await _readDbContext.ClientAccounts.
-            AnyAsync(c => c.AccountId == command.UserAccountId, cancellationToken);
+            AnyAsync(c => c.UserAccountId == command.UserAccountId, cancellationToken);
 
         if (clientAccountExist)
         {

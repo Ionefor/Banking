@@ -1,5 +1,4 @@
-﻿using Banking.BankAccounts.Application.Command.Cards;
-using Banking.BankAccounts.Application.Command.Cards.Add;
+﻿using Banking.BankAccounts.Application.Command.Cards.Add;
 using Banking.BankAccounts.Application.Command.Cards.Delete;
 using Banking.BankAccounts.Application.Command.Cards.SetMainCard;
 using Banking.BankAccounts.Application.Queries.Cards.GetByAccountId;
@@ -12,9 +11,9 @@ using ApplicationController = Banking.Framework.Controller.ApplicationController
 
 namespace Banking.ClientAccounts.Presentation.Controllers;
 
-public class CardController : ApplicationController
+public class CardsController : ApplicationController
 {
-    [HttpPost]
+    [HttpPost("/clientAccounts/{clientAccountId:guid}/account/{accountId:guid}/cards")]
     public async Task<ActionResult<Guid>> AddCard(
         [FromRoute] Guid clientAccountId,
         [FromRoute] Guid accountId,
@@ -23,16 +22,14 @@ public class CardController : ApplicationController
         CancellationToken cancellationToken)
     {
         return await HandleCommand(
-            clientAccountId,
-            accountId,
             request,
-            (r, cId, aId) => r.ToCommand(cId, aId),
+            r => r.ToCommand(clientAccountId, accountId),
             handler.Handle,
             error => BadRequest(Envelope.Error(error)),
             cancellationToken);
     }
-
-    [HttpDelete]
+    
+    [HttpDelete("/{clientAccountId:guid}/cards/{cardId:guid}")]
     public async Task<ActionResult<Guid>> DeleteCard(
         [FromRoute] Guid clientAccountId,
         [FromRoute] Guid cardId,
@@ -48,7 +45,7 @@ public class CardController : ApplicationController
             cancellationToken);
     }
     
-    [HttpPut]
+    [HttpPut("/{clientAccountId:guid}/cards/{cardId:guid}/main-card")]
     public async Task<ActionResult<Guid>> SetMainCard(
         [FromRoute] Guid clientAccountId,
         [FromRoute] Guid cardId,
@@ -64,7 +61,7 @@ public class CardController : ApplicationController
             cancellationToken);
     }
     
-    [HttpGet]
+    [HttpGet("/cards/{cardId:guid}")]
     public async Task<ActionResult<Guid>> GetById(
         [FromRoute] Guid cardId,
         [FromServices] GetCardByIdHandler handler,
@@ -76,11 +73,11 @@ public class CardController : ApplicationController
             handler.Handle,
             error => BadRequest(Envelope.Error(error)),
             cancellationToken);
-
+    
         return result.Result;
     }
     
-    [HttpGet]
+    [HttpGet("accounts/{accountId:guid}/cards")]
     public async Task<ActionResult<Guid>> GetByAccountId(
         [FromRoute] Guid accountId,
         [FromQuery] GetCardsWithPaginationRequest request,
@@ -95,7 +92,7 @@ public class CardController : ApplicationController
         );
     }
     
-    [HttpGet]
+    [HttpGet("/{clientAccountId:guid}/cards")]
     public async Task<ActionResult<Guid>> GetByClientAccountId(
         [FromRoute] Guid clientAccountId,
         [FromQuery] GetCardsWithPaginationRequest request,

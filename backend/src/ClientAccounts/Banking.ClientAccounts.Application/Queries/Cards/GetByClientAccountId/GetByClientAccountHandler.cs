@@ -21,7 +21,7 @@ public class GetByClientAccountHandler :
         CancellationToken cancellationToken = default)
     {
         var cards = _readDbContext.Cards.
-            Where(c => c.AccountId == query.ClientAccountId);
+            Where(c => c.ClientAccountId == query.ClientAccountId);
         
         return await cards.ToPagedList(
             query.PaginationParams.Page,

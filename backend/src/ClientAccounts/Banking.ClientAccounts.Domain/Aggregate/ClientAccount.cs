@@ -69,10 +69,14 @@ public class ClientAccount : SoftDeletableEntity<ClientAccountId>
     
     public void SetMainCard(Card card)
     {
-        var currentCard = _cards.
+        var currentMainCard = _cards.FirstOrDefault(c => c.IsMain);
+
+        currentMainCard?.ResetMainCard();
+
+        var newMainCard = _cards.
             FirstOrDefault(c => c.Id == card.Id);
         
-        currentCard!.SetMainCard();
+        newMainCard!.SetMainCard();
     }
     
     

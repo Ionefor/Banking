@@ -18,7 +18,6 @@ namespace Banking.BankAccounts.Application.Command.Accounts.Add;
 public class AddAccountHandler :
     ICommandHandler<Guid, AddAccountCommand>
 {
-
     private readonly IValidator<AddAccountCommand> _validator;
     private readonly ILogger<AddAccountHandler> _logger;
     private readonly IReadDbContext _readDbContext;

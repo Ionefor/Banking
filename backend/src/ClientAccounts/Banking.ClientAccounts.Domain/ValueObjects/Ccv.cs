@@ -16,7 +16,7 @@ public class Ccv : ComparableValueObject
     
     public static Result<Ccv, Error> Create(string code)
     {
-        if (string.IsNullOrWhiteSpace(code) || code.Length != 3 || code.All(char.IsDigit))
+        if (string.IsNullOrWhiteSpace(code) || code.Length != 3 || !code.All(char.IsDigit))
         {
             return Errors.General.
                 ValueIsInvalid(new ErrorParameters.ValueIsInvalid(nameof(Ccv)));

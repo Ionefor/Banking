@@ -29,6 +29,11 @@ public class Card : SoftDeletableEntity<CardId>
     
     internal void SetMainCard()
     {
+        IsMain = true;
+    }
+    
+    internal void ResetMainCard()
+    {
         IsMain = false;
     }
     
