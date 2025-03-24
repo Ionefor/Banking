@@ -20,7 +20,7 @@ public class UsersController : ApplicationController
         await using var fileProcessor = new FormFileProcessor();
         var fileDto = fileProcessor.Process(request.File);
         
-        return await HandleRequest(
+        return await HandleCommand(
             request,
             r => r.ToCommand(fileDto),
             handler.Handle,
@@ -33,7 +33,7 @@ public class UsersController : ApplicationController
         [FromBody] RegisterCorporateAccountRequest request,
         CancellationToken cancellationToken)
     {
-        return await HandleRequest(
+        return await HandleCommand(
             request,
             r => r.ToCommand(),
             handler.Handle,
@@ -46,7 +46,7 @@ public class UsersController : ApplicationController
         [FromServices] LoginUserHandler handler,
         CancellationToken cancellationToken)
     {
-        var result =  await HandleRequest(
+        var result =  await HandleCommand(
             request,
             r => r.ToCommand(),
             handler.Handle,
@@ -61,7 +61,7 @@ public class UsersController : ApplicationController
         [FromServices] RefreshTokenHandler handler,
         CancellationToken cancellationToken)
     {
-        var result =  await HandleRequest(
+        var result =  await HandleCommand(
             request,
             r => r.ToCommand(),
             handler.Handle,

@@ -8,13 +8,13 @@ public abstract class SoftDeletableEntity<TId> : Entity<TId> where TId : BaseId<
     public bool IsDeleted { get; private set; }
     public DateTime? DeletionDate { get; protected set; }
 
-    protected virtual void Delete()
+    public virtual void Delete()
     {
         IsDeleted = true;
         DeletionDate = DateTime.UtcNow;
     }
 
-    protected virtual void Restore()
+    public virtual void Restore()
     {
         IsDeleted = false;
         DeletionDate = null;

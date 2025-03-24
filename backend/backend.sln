@@ -22,17 +22,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.Users.Presentation"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.Users.Infrastructure", "src\Users\Banking.Users.Infrastructure\Banking.Users.Infrastructure.csproj", "{E2FA4CF7-B7D5-4162-9A52-88A0161F51B7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BankAccounts", "BankAccounts", "{9623E6F5-E697-400C-BE2E-58C6B441017D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientAccounts", "ClientAccounts", "{9623E6F5-E697-400C-BE2E-58C6B441017D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.BankAccounts.Application", "src\BankAccounts\Banking.BankAccounts.Application\Banking.BankAccounts.Application.csproj", "{6FDEB122-2A38-42AF-9A33-80A33E8269B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.ClientAccounts.Application", "src\ClientAccounts\Banking.ClientAccounts.Application\Banking.ClientAccounts.Application.csproj", "{6FDEB122-2A38-42AF-9A33-80A33E8269B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.BankAccounts.Contracts", "src\BankAccounts\Banking.BankAccounts.Contracts\Banking.BankAccounts.Contracts.csproj", "{F240FE2A-99CC-46E4-BD50-D51D59B2F403}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.ClientAccounts.Contracts", "src\ClientAccounts\Banking.ClientAccounts.Contracts\Banking.ClientAccounts.Contracts.csproj", "{F240FE2A-99CC-46E4-BD50-D51D59B2F403}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.BankAccounts.Domain", "src\BankAccounts\Banking.BankAccounts.Domain\Banking.BankAccounts.Domain.csproj", "{2C4C369D-188E-4D95-81F6-551BD2991650}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.ClientAccounts.Domain", "src\ClientAccounts\Banking.ClientAccounts.Domain\Banking.ClientAccounts.Domain.csproj", "{2C4C369D-188E-4D95-81F6-551BD2991650}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.BankAccounts.Presentation", "src\BankAccounts\Banking.BankAccounts.Presentation\Banking.BankAccounts.Presentation.csproj", "{DD5DC801-CF44-4047-A6C0-DD2CA41A5C36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.ClientAccounts.Presentation", "src\ClientAccounts\Banking.ClientAccounts.Presentation\Banking.ClientAccounts.Presentation.csproj", "{DD5DC801-CF44-4047-A6C0-DD2CA41A5C36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.BankAccounts.Infrastructure", "src\BankAccounts\Banking.BankAccounts.Infrastructure\Banking.BankAccounts.Infrastructure.csproj", "{57EF46FD-032A-48A1-BEA5-FFC9581CF4CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.ClientAccounts.Infrastructure", "src\ClientAccounts\Banking.ClientAccounts.Infrastructure\Banking.ClientAccounts.Infrastructure.csproj", "{57EF46FD-032A-48A1-BEA5-FFC9581CF4CF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.Web", "src\Banking.Web\Banking.Web.csproj", "{04C1D9D3-FA2F-4E36-87CB-1743FB42C9D3}"
 EndProject
