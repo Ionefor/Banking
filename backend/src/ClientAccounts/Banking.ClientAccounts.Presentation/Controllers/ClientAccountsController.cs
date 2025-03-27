@@ -10,10 +10,13 @@ using Microsoft.AspNetCore.Mvc;
 using ApplicationController = Banking.Framework.Controller.ApplicationController;
 
 namespace Banking.ClientAccounts.Presentation.Controllers;
+//ClientAccounts/{Id}/cards/{id}/ccv ~
+//ClientAccounts/{Id}/bankAccounts/{id}/smt
 
 public class ClientAccountsController : ApplicationController
 {
-    [HttpPost("Accounts/{userAccountId:guid}")]
+    [Permission(Permissions.ClientAccounts.Create)]
+    [HttpPost("{userAccountId:guid}")]
     public async Task<ActionResult<Guid>> Create(
         [FromRoute] Guid userAccountId,
         [FromServices] CreateClientAccountHandler handler,
@@ -27,6 +30,7 @@ public class ClientAccountsController : ApplicationController
             cancellationToken);
     }
     
+    [Permission(Permissions.ClientAccounts.Delete)]
     [HttpDelete("{clientAccountId:guid}")]
     public async Task<ActionResult<Guid>> Delete(
         [FromRoute] Guid clientAccountId,
@@ -41,6 +45,7 @@ public class ClientAccountsController : ApplicationController
             cancellationToken);
     }
     
+    [Permission(Permissions.ClientAccounts.Delete)]
     [HttpDelete("{clientAccountId:guid}/soft")]
     public async Task<ActionResult<Guid>> SoftDelete(
         [FromRoute] Guid clientAccountId,
@@ -55,6 +60,7 @@ public class ClientAccountsController : ApplicationController
             cancellationToken);
     }
     
+    [Permission(Permissions.ClientAccounts.Create)]
     [HttpPost("{clientAccountId:guid}/restore")]
     public async Task<ActionResult<Guid>> Restore(
         [FromRoute] Guid clientAccountId,
@@ -69,6 +75,7 @@ public class ClientAccountsController : ApplicationController
             cancellationToken);
     }
     
+    [Permission(Permissions.ClientAccounts.Read)]
     [HttpGet]
     public async Task<ActionResult> GetAll(
         [FromQuery] GetCAWithPaginationRequest request,
@@ -83,14 +90,15 @@ public class ClientAccountsController : ApplicationController
         );
     }
     
-    [HttpGet("{userId:guid}")]
+    [Permission(Permissions.ClientAccounts.Read)]
+    [HttpGet("{clientAccountId:guid}")]
     public async Task<ActionResult<Guid>> GetByUserId(
         [FromServices] GetClientAccountByIdHandler handler,
-        [FromRoute] Guid userId,
+        [FromRoute] Guid clientAccountId,
         CancellationToken cancellationToken)
     {
         var result = await HandleQuery(
-            userId,
+            clientAccountId,
             id => new GetClientAccountByIdQuery(id), 
             handler.Handle,
             error => BadRequest(Envelope.Error(error)),

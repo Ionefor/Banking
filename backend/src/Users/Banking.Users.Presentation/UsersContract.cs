@@ -1,4 +1,5 @@
 ﻿using Banking.SharedKernel.Models.Errors;
+using Banking.Users.Application.Abstractions;
 using Banking.Users.Contracts;
 using Banking.Users.Domain;
 using CSharpFunctionalExtensions;
@@ -9,15 +10,17 @@ namespace Banking.Users.Presentation;
 public class UsersContract : IUsersContract
 {
     private readonly UserManager<User> _userManager;
-
+    private readonly IPermissionManager _permissionManager;
     public UsersContract(
-        UserManager<User> userManager)
+        UserManager<User> userManager,
+        IPermissionManager permissionManager)
     {
         _userManager = userManager;
+        _permissionManager = permissionManager;
     }
     public Task<HashSet<string>> GetUserPermissionsCodes(Guid userId)
     {
-        throw new NotImplementedException();
+        return _permissionManager.GetUserPermissions(userId);
     }
 
     public async Task<UnitResult<ErrorList>> DeleteUser(Guid userId)

@@ -58,14 +58,14 @@ public class AddCardHandler :
         }
         
         var accountExist = await _readDbContext.Accounts.AnyAsync(
-            c => c.Id == command.AccountId && c.ClientAccountId == command.ClientAccountId,
+            c => c.Id == command.BankAccountId && c.ClientAccountId == command.ClientAccountId,
             cancellationToken);
         
         if (!accountExist)
         {
             return Errors.General.NotFound(
-                new ErrorParameters.NotFound(nameof(Accounts), nameof(command.AccountId),
-                    command.AccountId)).ToErrorList();
+                new ErrorParameters.NotFound(nameof(Accounts), nameof(command.BankAccountId),
+                    command.BankAccountId)).ToErrorList();
         }
         
         var cardExist = await _readDbContext.Cards.AnyAsync(
@@ -78,7 +78,7 @@ public class AddCardHandler :
         }
 
         var cardId = CardId.NewGuid();
-        var accountId = AccountId.Create(command.AccountId);
+        var accountId = BankAccountId.Create(command.BankAccountId);
         var clientAccountId = ClientAccountId.Create(command.ClientAccountId);
         
         var paymentDetails = PaymentDetails.Create(command.PaymentDetails).Value;

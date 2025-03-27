@@ -8,7 +8,7 @@ public class UpdateFullNameCommandValidator : AbstractValidator<UpdateFullNameCo
 {
     public UpdateFullNameCommandValidator()
     {
-        RuleFor(u => u.UserId).
+        RuleFor(u => u.AccountId).
             NotEmpty().NotNull().WithMessage("UserId cannot be empty");
 
         RuleFor(u => u.FullName).MustBeValueObject(f =>

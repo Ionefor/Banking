@@ -50,19 +50,19 @@ public class DeleteAccountHandler :
         }
         
         var accountExist = await _readDbContext.Accounts.
-            AnyAsync(c => c.Id == command.AccountId, cancellationToken);
+            AnyAsync(c => c.Id == command.BankAccountId, cancellationToken);
 
         if (!accountExist)
         {
             return Errors.General.NotFound(new ErrorParameters.NotFound
-                    (nameof(Accounts), nameof(command.AccountId), command.AccountId)).ToErrorList();
+                    (nameof(Accounts), nameof(command.BankAccountId), command.BankAccountId)).ToErrorList();
         }
 
         var clientAccountId = ClientAccountId.
             Create(command.ClientAccountId);
         
-        var accountId = AccountId.
-            Create(command.AccountId);
+        var accountId = BankAccountId.
+            Create(command.BankAccountId);
         
         var clientAccountResult = await _repository.
             GetClientAccountById(clientAccountId, cancellationToken);

@@ -11,8 +11,9 @@ namespace Banking.Accounts.Presentation.Controllers;
 
 public class CorporateAccountsController : ApplicationController
 {
+    [Permission(Permissions.CorporateAccounts.Read)]
     [HttpGet("company-name")]
-    public async Task<ActionResult<Guid>> GetUserByCompanyName(
+    public async Task<ActionResult<Guid>> GetByCompanyName(
         [FromQuery] GetByCompanyNameRequest request,
         [FromServices] GetByCompanyNameHandler handler,
         CancellationToken cancellationToken)
@@ -27,15 +28,16 @@ public class CorporateAccountsController : ApplicationController
         return result.Result;
     }
     
-    [HttpPut("{userId:guid}/company-name")]
+    [Permission(Permissions.CorporateAccounts.Update)]
+    [HttpPut("{accountId:guid}/company-name")]
     public async Task<ActionResult<Guid>> UpdateCompanyName(
-        [FromRoute] Guid userId,
+        [FromRoute] Guid accountId,
         [FromBody] UpdateCompanyNameRequest request,
         [FromServices] UpdateCompanyNameHandler handler,
         CancellationToken cancellationToken)
     {
         return await HandleCommand(
-            userId,
+            accountId,
             request,
             (r, id) => r.ToCommand(id),
             handler.Handle,
@@ -43,15 +45,16 @@ public class CorporateAccountsController : ApplicationController
             cancellationToken);
     }
     
-    [HttpPut("{userId:guid}/taxId")]
+    [Permission(Permissions.CorporateAccounts.Update)]
+    [HttpPut("{accountId:guid}/taxId")]
     public async Task<ActionResult<Guid>> UpdateTaxId(
-        [FromRoute] Guid userId,
+        [FromRoute] Guid accountId,
         [FromBody] UpdateTaxIdRequest request,
         [FromServices] UpdateTaxIdHandler handler,
         CancellationToken cancellationToken)
     {
         return await HandleCommand(
-            userId,
+            accountId,
             request,
             (r, id) => r.ToCommand(id),
             handler.Handle,

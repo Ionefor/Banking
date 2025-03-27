@@ -7,7 +7,7 @@ public class UpdateAddressCommandValidator : AbstractValidator<UpdateAddressComm
 {
     public UpdateAddressCommandValidator()
     {
-        RuleFor(u => u.UserId).
+        RuleFor(u => u.AccountId).
             NotEmpty().NotNull().WithMessage("UserId cannot be empty");
 
         RuleFor(u => u.Address).

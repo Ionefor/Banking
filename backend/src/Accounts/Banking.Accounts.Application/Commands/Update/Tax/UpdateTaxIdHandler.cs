@@ -46,26 +46,26 @@ public class UpdateTaxIdHandler : ICommandHandler<Guid, UpdateTaxIdCommand>
             return validationResult.ToErrorList();
         
         var corporateExist = await _readDbContext.CorporateAccounts.
-            AnyAsync(i => i.UserId == command.UserId, cancellationToken);
+            AnyAsync(c => c.Id == command.AccountId, cancellationToken);
 
         var taxId = TaxId.Create(command.TaxId).Value;
         
         if (!corporateExist)
         {
             return Errors.General.NotFound(new ErrorParameters.NotFound
-                (nameof(CorporateAccount), nameof(command.UserId), command.UserId)).ToErrorList();
+                (nameof(CorporateAccount), nameof(command.AccountId), command.AccountId)).ToErrorList();
         }
         
         var corporateAccount = _accountRepository.
-            GetCorporateByUserId(command.UserId, cancellationToken).Result.Value;
+            GetCorporateById(command.AccountId, cancellationToken).Result.Value;
             
         corporateAccount.UpdateTaxId(taxId);
         
         await _unitOfWork.SaveChangesAsync(cancellationToken);
         
         _logger.
-            LogInformation("User with ID {UserId} update TaxId.", command.UserId);
+            LogInformation("User with ID {UserId} update TaxId.", command.AccountId);
 
-        return command.UserId;
+        return command.AccountId;
     }
 }

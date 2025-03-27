@@ -34,9 +34,9 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
                     .HasColumnName("ccv");
             });
         
-        builder.HasOne<Account>()
+        builder.HasOne<BankAccount>()
             .WithMany() 
-            .HasForeignKey(c => c.AccountId) 
+            .HasForeignKey(c => c.BankAccountId) 
             .OnDelete(DeleteBehavior.Cascade);
         
         builder.Property(c => c.ValidThru).

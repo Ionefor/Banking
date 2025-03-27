@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Banking.BankAccounts.Application.Queries.Accounts.GetById;
 
 public class GetAccountByIdHandler  : 
-    IQueryHandler<Result<AccountDto, ErrorList>, GetAccountByIdQuery>
+    IQueryHandler<Result<BankAccountDto, ErrorList>, GetAccountByIdQuery>
 {
     private readonly IReadDbContext _readDbContext;
 
@@ -17,7 +17,7 @@ public class GetAccountByIdHandler  :
         _readDbContext = readDbContext;
     }
     
-    public async Task<Result<AccountDto, ErrorList>> Handle(
+    public async Task<Result<BankAccountDto, ErrorList>> Handle(
         GetAccountByIdQuery query,
         CancellationToken cancellationToken = default)
     {

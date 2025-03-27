@@ -8,7 +8,7 @@ public class UpdateTaxIdCommandValidator : AbstractValidator<UpdateTaxIdCommand>
 {
     public UpdateTaxIdCommandValidator()
     {
-        RuleFor(u => u.UserId).
+        RuleFor(u => u.AccountId).
             NotEmpty().NotNull().WithMessage("UserId cannot be empty");
 
         RuleFor(u => u.TaxId).

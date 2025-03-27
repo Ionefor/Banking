@@ -1,17 +1,12 @@
 ﻿using Banking.Accounts.Application.Commands.Delete;
 using Banking.Accounts.Application.Commands.Update.Address;
-using Banking.Accounts.Application.Commands.Update.CompanName;
 using Banking.Accounts.Application.Commands.Update.Mail;
-using Banking.Accounts.Application.Commands.Update.Name;
 using Banking.Accounts.Application.Commands.Update.Number;
-using Banking.Accounts.Application.Commands.Update.Photos;
-using Banking.Accounts.Application.Commands.Update.Tax;
 using Banking.Accounts.Application.Queries.GetAll;
 using Banking.Accounts.Application.Queries.GetByUserId;
 using Banking.Accounts.Presentation.Requests.Account;
 using Banking.Accounts.Presentation.Requests.Profile;
 using Banking.Core.Models;
-using Banking.Core.Processors;
 using Banking.Framework.Controller;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,21 +14,23 @@ namespace Banking.Accounts.Presentation.Controllers;
 
 public class AccountsController : ApplicationController
 {
-    [HttpDelete("{userId:guid}")]
+    [Permission(Permissions.Accounts.Delete)]
+    [HttpDelete("{accountId:guid}")]
     public async Task<ActionResult<Guid>> Delete(
-        [FromRoute] Guid userId,
+        [FromRoute] Guid accountId,
         [FromServices] DeleteUserAccountHandler handler,
         CancellationToken cancellationToken)
     {
         return await HandleCommand(
-            userId,
+            accountId,
             id => new DeleteUserAccountCommand(id),
             handler.Handle,
             error => BadRequest(Envelope.Error(error)),
             cancellationToken);
     }
     
-    [HttpGet("/accounts")]
+    [Permission(Permissions.Accounts.Read)]
+    [HttpGet]
     public async Task<ActionResult> GetAll(
         [FromQuery] GetAccountsWithPaginationRequest request,
         [FromServices] GetAccountsWithPaginationHandler handler,
@@ -47,14 +44,15 @@ public class AccountsController : ApplicationController
         );
     }
 
-    [HttpGet("{userId:guid}")]
+    [Permission(Permissions.Accounts.Read)]
+    [HttpGet("{accountId:guid}")]
     public async Task<ActionResult<Guid>> GetByUserId(
         [FromServices] GetAccountsByUserIdHandler handler,
-        [FromRoute] Guid userId,
+        [FromRoute] Guid accountId,
         CancellationToken cancellationToken)
     {
         var result =  await HandleQuery(
-            userId,
+            accountId,
             id => new GetAccountByUserIdQuery(id),
             handler.Handle,
             error => BadRequest(Envelope.Error(error)),
@@ -64,19 +62,21 @@ public class AccountsController : ApplicationController
         {
             return Ok(result.Value.Item1);
         }
-        
+
+        var a = result.Value.Item2;
         return Ok(result.Value.Item2);
     }
     
-    [HttpPut("{userId:guid}/phone-number")]
+    [Permission(Permissions.Accounts.Update)]
+    [HttpPut("{accountId:guid}/phone-number")]
     public async Task<ActionResult<Guid>> UpdatePhoneNumber(
-        [FromRoute] Guid userId,
+        [FromRoute] Guid accountId,
         [FromBody] UpdatePhoneNumberRequest request,
         [FromServices] UpdatePhoneNumberHandler handler,
         CancellationToken cancellationToken)
     {
         return await HandleCommand(
-            userId,
+            accountId,
             request,
             (r, id) => r.ToCommand(id),
             handler.Handle,
@@ -84,15 +84,16 @@ public class AccountsController : ApplicationController
             cancellationToken);
     }
     
-    [HttpPut("{userId:guid}/email")]
+    [Permission(Permissions.Accounts.Update)]
+    [HttpPut("{accountId:guid}/email")]
     public async Task<ActionResult<Guid>> UpdateEmail(
-        [FromRoute] Guid userId,
+        [FromRoute] Guid accountId,
         [FromBody] UpdateEmailRequest request,
         [FromServices] UpdateEmailHandler handler,
         CancellationToken cancellationToken)
     {
         return await HandleCommand(
-            userId,
+            accountId,
             request,
             (r, id) => r.ToCommand(id),
             handler.Handle,
@@ -100,15 +101,16 @@ public class AccountsController : ApplicationController
             cancellationToken);
     }
     
-    [HttpPut("{userId:guid}/address")]
+    [Permission(Permissions.Accounts.Update)]
+    [HttpPut("{accountId:guid}/address")]
     public async Task<ActionResult<Guid>> UpdateAddress(
-        [FromRoute] Guid userId,
+        [FromRoute] Guid accountId,
         [FromBody] UpdateAddressRequest request,
         [FromServices] UpdateAddressHandler handler,
         CancellationToken cancellationToken)
     {
         return await HandleCommand(
-            userId,
+            accountId,
             request,
             (r, id) => r.ToCommand(id),
             handler.Handle,

@@ -10,7 +10,7 @@ namespace Banking.ClientAccounts.Infrastructure.DbContexts;
 public class ReadDbContext(IConfiguration configuration) : DbContext, IReadDbContext
 {
     public IQueryable<ClientAccountDto> ClientAccounts => Set<ClientAccountDto>();
-    public IQueryable<AccountDto> Accounts => Set<AccountDto>();
+    public IQueryable<BankAccountDto> Accounts => Set<BankAccountDto>();
     public IQueryable<CardDto> Cards => Set<CardDto>();
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

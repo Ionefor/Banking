@@ -23,13 +23,13 @@ public class GetClientAccountByIdHandler :
         CancellationToken cancellationToken = default)
     {
         var clientAccount = await _readDbContext.ClientAccounts.
-            FirstOrDefaultAsync(c => c.UserAccountId == query.Id, cancellationToken);
+            FirstOrDefaultAsync(c => c.Id == query.ClientAccountId, cancellationToken);
 
         if (clientAccount is null)
         {
-            return Errors.General.
-                NotFound(new ErrorParameters.NotFound(
-                    nameof(ClientAccount), nameof(query.Id), query.Id)).ToErrorList();
+            return Errors.General.NotFound(new ErrorParameters.NotFound(
+                    nameof(ClientAccount), nameof(query.ClientAccountId),
+                        query.ClientAccountId)).ToErrorList();
         }
 
         return clientAccount;

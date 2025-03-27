@@ -3,4 +3,4 @@ using Banking.Core.Abstractions;
 
 namespace Banking.Accounts.Application.Commands.Update.Address;
 
-public record UpdateAddressCommand(Guid UserId, AddressDto Address) : ICommand;
+public record UpdateAddressCommand(Guid AccountId, AddressDto Address) : ICommand;

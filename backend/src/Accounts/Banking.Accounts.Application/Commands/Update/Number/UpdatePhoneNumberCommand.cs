@@ -2,4 +2,4 @@
 
 namespace Banking.Accounts.Application.Commands.Update.Number;
 
-public record UpdatePhoneNumberCommand(Guid UserId, string PhoneNumber) : ICommand;
+public record UpdatePhoneNumberCommand(Guid AccountId, string PhoneNumber) : ICommand;

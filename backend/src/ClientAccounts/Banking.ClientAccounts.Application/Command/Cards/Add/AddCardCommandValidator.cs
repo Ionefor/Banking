@@ -11,8 +11,8 @@ public class AddCardCommandValidator : AbstractValidator<AddCardCommand>
         RuleFor(c => c.ClientAccountId).
             NotEmpty().NotNull().WithMessage("ClientAccountId cannot be empty");
 
-        RuleFor(c => c.AccountId)
-            .NotEmpty().NotNull().WithMessage("AccountId cannot be empty");
+        RuleFor(c => c.BankAccountId)
+            .NotEmpty().NotNull().WithMessage("BankAccountId cannot be empty");
 
         RuleFor(c => c.PaymentDetails).
             MustBeValueObject(PaymentDetails.Create);

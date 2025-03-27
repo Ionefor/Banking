@@ -1,17 +1,16 @@
-﻿using Banking.ClientAccounts.Domain.Aggregate;
-using Banking.ClientAccounts.Domain.ValueObjects;
+﻿using Banking.ClientAccounts.Domain.ValueObjects;
 using Banking.ClientAccounts.Domain.ValueObjects.Ids;
 using Banking.SharedKernel;
 using Banking.SharedKernel.Models.Abstractions;
 
 namespace Banking.ClientAccounts.Domain.Entities;
 
-public class Account : SoftDeletableEntity<AccountId>
+public class BankAccount : SoftDeletableEntity<BankAccountId>
 {
-    private Account(AccountId id) : base(id) {}
+    private BankAccount(BankAccountId id) : base(id) {}
     
-    public Account(
-        AccountId id,
+    public BankAccount(
+        BankAccountId id,
         PaymentDetails paymentDetails,
         WalletType type,
         Currencies currency,
@@ -27,9 +26,4 @@ public class Account : SoftDeletableEntity<AccountId>
     public WalletType Type { get; private set; }
     public Currencies Сurrency { get; private set; }
     public Balance Balance { get; private set; }
-    
-    internal void UpdateBalance(Balance balance)
-    {
-        Balance = balance;
-    }
 }

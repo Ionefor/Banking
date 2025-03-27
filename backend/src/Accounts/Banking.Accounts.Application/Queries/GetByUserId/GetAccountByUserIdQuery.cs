@@ -2,4 +2,4 @@
 
 namespace Banking.Accounts.Application.Queries.GetByUserId;
 
-public record GetAccountByUserIdQuery(Guid UserId) : IQuery;
+public record GetAccountByUserIdQuery(Guid AccountId) : IQuery;

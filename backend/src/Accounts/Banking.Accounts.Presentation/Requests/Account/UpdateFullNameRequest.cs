@@ -5,5 +5,5 @@ namespace Banking.Accounts.Presentation.Requests.Account;
 
 public record UpdateFullNameRequest(FullNameDto FullName)
 {
-    public UpdateFullNameCommand ToCommand(Guid userId) => new(userId, FullName);
+    public UpdateFullNameCommand ToCommand(Guid accountId) => new(accountId, FullName);
 }

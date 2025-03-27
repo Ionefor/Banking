@@ -12,7 +12,7 @@ public class CardDtoConfiguration : IEntityTypeConfiguration<CardDto>
 
         builder.HasKey(c => c.Id);
         
-        builder.HasOne<AccountDto>() 
+        builder.HasOne<BankAccountDto>() 
             .WithMany() 
             .HasForeignKey(c => c.AccountId); 
         

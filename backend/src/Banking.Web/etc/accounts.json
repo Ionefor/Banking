@@ -1,52 +1,92 @@
 ﻿{
   "Roles" : {
     "Admin" : [
-      "Volunteer.Create",
-      "Volunteer.Read",
-      "Volunteer.Update",
-      "Volunteer.Delete"
+      "ClientAccount.Create",
+      "ClientAccount.Read",
+      "ClientAccount.Delete",
+      "BankAccount.Create",
+      "BankAccount.Read",
+      "BankAccount.Update",
+      "BankAccount.Delete",
+      "Card.Create",
+      "Card.Read",
+      "Card.Update",
+      "Card.Delete",
+      "Account.Read",
+      "Account.Update",
+      "Account.Delete",
+      "CorporateAccount.Read",
+      "CorporateAccount.Update",
+      "IndividualAccount.Read",
+      "IndividualAccount.Update"
     ],
     "Individual" : [
-      "Volunteer.Read",
-      "Pet.Create",
-      "Pet.Read",
-      "Pet.Update",
-      "Pet.Delete",
-      "Species.Read",
-      "Breed.Read"
+      "ClientAccount.Create",
+      "ClientAccount.Read",
+      "ClientAccount.Delete",
+      "BankAccount.Create",
+      "BankAccount.Read",
+      "BankAccount.Update",
+      "BankAccount.Delete",
+      "Card.Create",
+      "Card.Read",
+      "Card.Update",
+      "Card.Delete",
+      "Account.Read",
+      "Account.Update",
+      "IndividualAccount.Read",
+      "IndividualAccount.Update"
     ],
     "Corporate" : [
-      "Volunteer.Read",
-      "Pet.Read",
-      "Species.Read",
-      "Breed.Read"
+      "ClientAccount.Create",
+      "ClientAccount.Read",
+      "ClientAccount.Delete",
+      "BankAccount.Create",
+      "BankAccount.Read",
+      "BankAccount.Update",
+      "BankAccount.Delete",
+      "Card.Create",
+      "Card.Read",
+      "Card.Update",
+      "Card.Delete",
+      "Account.Read",
+      "Account.Update",
+      "Account.Delete",
+      "CorporateAccount.Read",
+      "CorporateAccount.Update"
     ]
   },
 
   "Permissions" : {
-    "Volunteers" : [
-      "Volunteer.Create",
-      "Volunteer.Read",
-      "Volunteer.Update",
-      "Volunteer.Delete"
+    "ClientAccounts" : [
+      "ClientAccount.Create",
+      "ClientAccount.Read",
+      "ClientAccount.Delete"
     ],
-    "Pets" : [
-      "Pet.Create",
-      "Pet.Read",
-      "Pet.Update",
-      "Pet.Delete"
+    "BankAccounts" : [
+      "BankAccount.Create",
+      "BankAccount.Read",
+      "BankAccount.Update",
+      "BankAccount.Delete"
     ],
-    "Species" : [
-      "Species.Create",
-      "Species.Read",
-      "Species.Update",
-      "Species.Delete"
+    "Cards" : [
+      "Card.Create",
+      "Card.Read",
+      "Card.Update",
+      "Card.Delete"
     ],
-    "Breeds" : [
-      "Breed.Create",
-      "Breed.Read",
-      "Breed.Update",
-      "Breed.Delete"
+    "Accounts" : [
+      "Account.Read",
+      "Account.Update",
+      "Account.Delete"
+    ],
+    "IndividualAccounts" : [
+      "IndividualAccount.Read",
+      "IndividualAccount.Update"
+    ],
+    "CorporateAccounts" : [
+      "CorporateAccount.Read",
+      "CorporateAccount.Update"
     ]
   }
 }

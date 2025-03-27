@@ -47,16 +47,17 @@ public class UpdateFullNameHandler :
             return validationResult.ToErrorList();
         
         var individualExist = await _readDbContext.IndividualAccounts.
-            AnyAsync(i => i.UserId == command.UserId, cancellationToken);
+            AnyAsync(i => i.Id == command.AccountId, cancellationToken);
 
         if (!individualExist)
         {
             return Errors.General.NotFound(new ErrorParameters.NotFound
-                (nameof(IndividualAccount), nameof(command.UserId), command.UserId)).ToErrorList();
+                (nameof(IndividualAccount), nameof(command.AccountId),
+                    command.AccountId)).ToErrorList();
         }
 
         var individualAccount = await _accountRepository.
-            GetIndividualByUserId(command.UserId, cancellationToken);
+            GetIndividualById(command.AccountId, cancellationToken);
 
         if (individualAccount.IsFailure)
             return individualAccount.Error.ToErrorList();
@@ -71,8 +72,8 @@ public class UpdateFullNameHandler :
         await _unitOfWork.SaveChangesAsync(cancellationToken);
         
         _logger.
-            LogInformation("User with ID {UserId} update full name.", command.UserId);
+            LogInformation("User with ID {UserId} update full name.", command.AccountId);
 
-        return command.UserId;
+        return command.AccountId;
     }
 }

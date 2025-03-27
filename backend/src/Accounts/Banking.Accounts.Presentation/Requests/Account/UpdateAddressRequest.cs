@@ -5,6 +5,6 @@ namespace Banking.Accounts.Presentation.Requests.Account;
 
 public record UpdateAddressRequest(AddressDto Address)
 {
-    public UpdateAddressCommand ToCommand(Guid userId) => new(userId, Address);
+    public UpdateAddressCommand ToCommand(Guid accountId) => new(accountId, Address);
 
 }

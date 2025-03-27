@@ -2,7 +2,7 @@
 
 namespace Banking.BankAccounts.Contracts.Dto;
 
-public class AccountDto
+public class BankAccountDto
 {
     public Guid Id { get; init; }
     

@@ -7,7 +7,7 @@ public class UpdateCompanyNameCommandValidator : AbstractValidator<UpdateCompany
 {
     public UpdateCompanyNameCommandValidator()
     {
-        RuleFor(u => u.UserId).
+        RuleFor(u => u.AccountId).
             NotEmpty().NotNull().WithMessage("UserId cannot be empty");
 
         RuleFor(u => u.CompanyName).

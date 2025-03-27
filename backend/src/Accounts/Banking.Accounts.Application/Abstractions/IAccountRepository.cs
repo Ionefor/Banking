@@ -10,9 +10,9 @@ public interface IAccountRepository
 
     Task Delete<TAccount>(TAccount account) where TAccount : class;
     
-    Task<Result<IndividualAccount, Error>> GetIndividualByUserId(
-        Guid userId, CancellationToken cancellationToken = default);
+    Task<Result<IndividualAccount, Error>> GetIndividualById(
+        Guid accountId, CancellationToken cancellationToken = default);
     
-    Task<Result<CorporateAccount, Error>> GetCorporateByUserId(
-        Guid userId, CancellationToken cancellationToken = default);
+    Task<Result<CorporateAccount, Error>> GetCorporateById(
+        Guid accountId, CancellationToken cancellationToken = default);
 }
