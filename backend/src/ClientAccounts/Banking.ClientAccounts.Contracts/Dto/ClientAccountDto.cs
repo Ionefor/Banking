@@ -12,7 +12,7 @@ public class ClientAccountDto
     
     public AccountType UserAccountType { get; init; }
     
-    public AccountDto[] Accounts { get; init; } = [];
+    public BankAccountDto[] Accounts { get; init; } = [];
     
     public CardDto[] Cards { get; init; } = [];
 }

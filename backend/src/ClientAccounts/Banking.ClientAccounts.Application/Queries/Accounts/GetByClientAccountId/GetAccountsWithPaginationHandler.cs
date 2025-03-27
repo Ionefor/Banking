@@ -7,7 +7,7 @@ using Banking.Core.Models;
 namespace Banking.BankAccounts.Application.Queries.Accounts.GetByClientAccountId;
 
 public class GetAccountsWithPaginationHandler : 
-    IQueryHandler<PageList<AccountDto>,
+    IQueryHandler<PageList<BankAccountDto>,
         GetAccountsWithPaginationQuery>
 {
     private readonly IReadDbContext _readDbContext;
@@ -18,7 +18,7 @@ public class GetAccountsWithPaginationHandler :
         _readDbContext = readDbContext;
     }
     
-    public async Task<PageList<AccountDto>> Handle(
+    public async Task<PageList<BankAccountDto>> Handle(
         GetAccountsWithPaginationQuery query,
         CancellationToken cancellationToken = default)
     {

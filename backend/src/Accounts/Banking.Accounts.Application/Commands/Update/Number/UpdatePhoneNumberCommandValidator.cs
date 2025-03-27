@@ -8,7 +8,7 @@ public class UpdatePhoneNumberCommandValidator : AbstractValidator<UpdatePhoneNu
 {
     public UpdatePhoneNumberCommandValidator()
     {
-        RuleFor(u => u.UserId).
+        RuleFor(u => u.AccountId).
             NotEmpty().NotNull().WithMessage("UserId cannot be empty");
 
         RuleFor(u => u.PhoneNumber).

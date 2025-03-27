@@ -2,4 +2,4 @@
 
 namespace Banking.Accounts.Application.Commands.Update.Mail;
 
-public record UpdateEmailCommand(Guid UserId, string Email) : ICommand;
+public record UpdateEmailCommand(Guid AccountId, string Email) : ICommand;

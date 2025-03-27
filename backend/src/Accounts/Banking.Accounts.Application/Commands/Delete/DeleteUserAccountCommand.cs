@@ -2,4 +2,4 @@
 
 namespace Banking.Accounts.Application.Commands.Delete;
 
-public record DeleteUserAccountCommand(Guid UserId) : ICommand;
+public record DeleteUserAccountCommand(Guid AccountId) : ICommand;

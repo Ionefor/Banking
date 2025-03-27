@@ -15,8 +15,8 @@ public interface IClientAccountRepository
     Task<Result<ClientAccount, Error>> GetClientAccountById(
         ClientAccountId clientAccountId, CancellationToken cancellationToken = default);
     
-    Task<Result<Account, Error>> GetAccountById(
-        AccountId accountId, CancellationToken cancellationToken = default);
+    Task<Result<BankAccount, Error>> GetAccountById(
+        BankAccountId bankAccountId, CancellationToken cancellationToken = default);
     
     Task<Result<Card, Error>> GetCardById(
         CardId cardId, CancellationToken cancellationToken = default);

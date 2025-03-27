@@ -15,7 +15,8 @@ public class User : IdentityUser<Guid>
         if (role.Name != Constants.Accounts.Individual)
         {
             return Errors.Extra.
-                RoleIsInvalid(new ErrorParameters.RoleIsInvalid("Role must be an Individual"));
+                RoleIsInvalid(new ErrorParameters.RoleIsInvalid(
+                    "Role must be an Individual"));
         }
         
         return new User
@@ -32,7 +33,8 @@ public class User : IdentityUser<Guid>
         if (role.Name != Constants.Accounts.Corporate)
         {
             return Errors.Extra.
-                RoleIsInvalid(new ErrorParameters.RoleIsInvalid("Role must be an Corporate"));
+                RoleIsInvalid(new ErrorParameters.RoleIsInvalid(
+                    "Role must be a Corporate"));
         }
         
         return new User
@@ -43,12 +45,14 @@ public class User : IdentityUser<Guid>
         };
     }
     
-    public static Result<User, Error> CreateAdmin(string userName, string email, Role role)
+    public static Result<User, Error> CreateAdmin(
+        string userName, string email, Role role)
     {
         if (role.Name != AdminAccount.Admin)
         {
             return Errors.Extra.RoleIsInvalid(
-                new ErrorParameters.RoleIsInvalid("Role must be an Admin"));
+                new ErrorParameters.RoleIsInvalid(
+                    "Role must be an Admin"));
         }
         
         return new User

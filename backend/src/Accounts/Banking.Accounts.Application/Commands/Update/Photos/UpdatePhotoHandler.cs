@@ -59,18 +59,18 @@ public class UpdatePhotoHandler : ICommandHandler<Guid, UpdatePhotoCommand>
                 return validationResult.ToErrorList();
         
             var individualExist = await _readDbContext.IndividualAccounts.
-                AnyAsync(i => i.UserId == command.UserId, cancellationToken);
+                AnyAsync(i => i.Id == command.AccountId, cancellationToken);
             
             if (!individualExist)
             {
                 return Errors.General.
                     NotFound(new ErrorParameters.NotFound
-                        (nameof(IndividualAccount), nameof(command.UserId), command.UserId)).
+                        (nameof(IndividualAccount), nameof(command.AccountId), command.AccountId)).
                     ToErrorList();
             }
             
             var individualAccount = _accountRepository.
-                GetIndividualByUserId(command.UserId, cancellationToken).Result.Value;
+                GetIndividualById(command.AccountId, cancellationToken).Result.Value;
             
             var filePath = FilePath.Create(command.File.FileName).Value;
         
@@ -102,11 +102,11 @@ public class UpdatePhotoHandler : ICommandHandler<Guid, UpdatePhotoCommand>
             await _unitOfWork.SaveChangesAsync(cancellationToken);
         
             _logger.
-                LogInformation("User with ID {UserId} update photo.", command.UserId);
+                LogInformation("User with ID {UserId} update photo.", command.AccountId);
 
             transaction.Commit();
             
-            return command.UserId;
+            return command.AccountId;
         }
         catch (Exception e)
         {

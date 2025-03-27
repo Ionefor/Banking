@@ -3,4 +3,4 @@
 namespace Banking.BankAccounts.Application.Command.Accounts.Delete;
 
 public record DeleteAccountCommand(
-    Guid ClientAccountId, Guid AccountId) : ICommand;
+    Guid ClientAccountId, Guid BankAccountId) : ICommand;

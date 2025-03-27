@@ -44,33 +44,34 @@ public class DeleteUserAccountHandler :
         try
         {
             var individualExist = await _readDbContext.IndividualAccounts.
-                AnyAsync(i => i.UserId == command.UserId, cancellationToken);
+                AnyAsync(i => i.Id == command.AccountId, cancellationToken);
             
             var corporateExist = await _readDbContext.CorporateAccounts.
-                AnyAsync(i => i.UserId == command.UserId, cancellationToken);
+                AnyAsync(c => c.Id == command.AccountId, cancellationToken);
             
             if (individualExist)
             {
                 var individualAccount = _accountRepository.
-                    GetIndividualByUserId(command.UserId, cancellationToken).Result.Value;
+                    GetIndividualById(command.AccountId, cancellationToken).Result.Value;
                 
                 await DeleteIndividualAccount(individualAccount, cancellationToken);
             }
             else if(corporateExist)
             {
                 var corporateAccount = _accountRepository.
-                    GetCorporateByUserId(command.UserId, cancellationToken).Result.Value;
+                    GetCorporateById(command.AccountId, cancellationToken).Result.Value;
                 
                 await DeleteCorporateAccount(corporateAccount, cancellationToken);
             }
             else
             {
                 return Errors.General.NotFound(new ErrorParameters.NotFound
-                    (Constants.Accounts.Individual, nameof(command.UserId), command.UserId)).ToErrorList();
+                    (Constants.Accounts.Individual, nameof(command.AccountId),
+                        command.AccountId)).ToErrorList();
             }
 
             var result = await _userContract.
-                DeleteUser(command.UserId);
+                DeleteUser(command.AccountId);
 
             if (result.IsFailure)
             {
@@ -80,16 +81,16 @@ public class DeleteUserAccountHandler :
             }
             
             _logger.
-                LogInformation("User with ID {UserId} has been deleted.", command.UserId);
+                LogInformation("User with ID {UserId} has been deleted.", command.AccountId);
             
             transaction.Commit();
             
-            return command.UserId;
+            return command.AccountId;
         }
         catch (Exception ex)
         {
              _logger.LogError(ex,
-                 "Can not delete user with ID {UserId} in transaction", command.UserId);
+                 "Can not delete user with ID {UserId} in transaction", command.AccountId);
              
              transaction.Rollback();
              

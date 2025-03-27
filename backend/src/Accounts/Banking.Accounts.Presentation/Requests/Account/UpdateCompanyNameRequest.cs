@@ -4,5 +4,5 @@ namespace Banking.Accounts.Presentation.Requests.Account;
 
 public record UpdateCompanyNameRequest(string CompanyName)
 {
-    public UpdateCompanyNameCommand ToCommand(Guid userId) => new(userId, CompanyName);
+    public UpdateCompanyNameCommand ToCommand(Guid accountId) => new(accountId, CompanyName);
 }

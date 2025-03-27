@@ -88,6 +88,9 @@ public static class DependencyInjection
         this IServiceCollection services,
         IConfiguration configuration)
     {
+        var jwtOptions = configuration.GetSection(JwtOptions.Jwt).Get<JwtOptions>()
+                         ?? throw new ApplicationException("Missing JwtOptions configuration");
+        
         services.
             AddAuthentication(options =>
             {
@@ -96,16 +99,11 @@ public static class DependencyInjection
                 options.DefaultSignInScheme = JwtBearerDefaults.AuthenticationScheme;
             }).
             AddJwtBearer(options =>
-            {
-                var jwtOptions = configuration.GetSection(JwtOptions.Jwt).Get<JwtOptions>()
-                                 ?? throw new ApplicationException("Missing JWT configuration");
-                
-                options.TokenValidationParameters =
-                    TokenValidationParametersFactory.CreateWithLifeTime(jwtOptions);
-            });
+                options.TokenValidationParameters = TokenValidationParametersFactory
+                    .CreateWithLifeTime(jwtOptions)); 
         
         services.AddAuthorization();
-        
+        services.AddScoped<ITokenProvider, JwtTokenProvider>();
         services.AddSingleton<IAuthorizationHandler, PermissionRequirementHandler>();
         services.AddSingleton<IAuthorizationPolicyProvider, PermissionPolicyProvider>();
             
@@ -123,7 +121,7 @@ public static class DependencyInjection
         services.AddSingleton<AccountSeeder>();
         services.AddScoped<AccountsSeederService>();
         
-        services.AddTransient<ITokenProvider, JwtTokenProvider>();
+       // services.AddTransient<ITokenProvider, JwtTokenProvider>();
         
         return services;
     }

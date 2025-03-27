@@ -45,10 +45,10 @@ public class UpdateAddressHandler :
             return validationResult.ToErrorList();
         
         var individualExist = await _readDbContext.IndividualAccounts.
-            AnyAsync(i => i.UserId == command.UserId, cancellationToken);
+            AnyAsync(i => i.Id == command.AccountId, cancellationToken);
         
         var corporateExist = await _readDbContext.CorporateAccounts.
-            AnyAsync(i => i.UserId == command.UserId, cancellationToken);
+            AnyAsync(c => c.Id == command.AccountId, cancellationToken);
         
         var address = SharedKernel.ValueObjects.Address.Create(
             command.Address.Country,
@@ -59,29 +59,29 @@ public class UpdateAddressHandler :
         if (individualExist)
         {
             var individualAccount = _accountRepository.
-                GetIndividualByUserId(command.UserId, cancellationToken).Result.Value;
+                GetIndividualById(command.AccountId, cancellationToken).Result.Value;
             
             individualAccount.UpdateAddress(address);
         }
         else if(corporateExist)
         {
             var corporateAccount = _accountRepository.
-                GetCorporateByUserId(command.UserId, cancellationToken).Result.Value;
+                GetCorporateById(command.AccountId, cancellationToken).Result.Value;
             
             corporateAccount.UpdateAddress(address);
         }
         else
         {
             return Errors.General.NotFound(new ErrorParameters.NotFound
-                (nameof(Constants.Accounts.Individual), nameof(command.UserId),
-                    command.UserId)).ToErrorList();
+                (nameof(Constants.Accounts.Individual), nameof(command.AccountId),
+                    command.AccountId)).ToErrorList();
         }
         
         await _unitOfWork.SaveChangesAsync(cancellationToken);
         
         _logger.
-            LogInformation("User with ID {UserId} update address.", command.UserId);
+            LogInformation("User with ID {UserId} update address.", command.AccountId);
 
-        return command.UserId;
+        return command.AccountId;
     }
 }

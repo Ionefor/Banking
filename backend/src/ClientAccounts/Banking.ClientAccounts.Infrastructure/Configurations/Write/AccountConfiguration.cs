@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Banking.ClientAccounts.Infrastructure.Configurations.Write;
 
-public class AccountConfiguration : IEntityTypeConfiguration<Account>
+public class AccountConfiguration : IEntityTypeConfiguration<BankAccount>
 {
-    public void Configure(EntityTypeBuilder<Account> builder)
+    public void Configure(EntityTypeBuilder<BankAccount> builder)
     {
         builder.ToTable("accounts");
 
@@ -16,7 +16,7 @@ public class AccountConfiguration : IEntityTypeConfiguration<Account>
 
         builder.Property(w => w.Id).HasConversion(
             id => id.Id,
-            value => AccountId.Create(value));
+            value => BankAccountId.Create(value));
         
         builder.Property(w => w.Type).IsRequired();
         

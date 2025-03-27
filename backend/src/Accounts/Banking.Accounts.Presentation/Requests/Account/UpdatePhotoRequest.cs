@@ -8,5 +8,5 @@ namespace Banking.Accounts.Presentation.Requests.Account;
 public record UpdatePhotoRequest(IFormFile File)
 {
     public UpdatePhotoCommand ToCommand(
-        Guid userId, CreateFileDto file) => new(userId, file);
+        Guid accountId, CreateFileDto file) => new(accountId, file);
 }

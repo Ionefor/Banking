@@ -12,8 +12,9 @@ namespace Banking.Accounts.Presentation.Controllers;
 
 public class IndividualAccountsController : ApplicationController
 {
+    [Permission(Permissions.IndividualAccounts.Read)]
     [HttpGet("full-name")]
-    public async Task<ActionResult<Guid>> GetUserByFullName(
+    public async Task<ActionResult<Guid>> GetByFullName(
         [FromQuery] GetAccountsByFullNameRequest request,
         [FromServices] GetAccountsByFullNameHandler handler,
         CancellationToken cancellationToken)
@@ -28,15 +29,16 @@ public class IndividualAccountsController : ApplicationController
         return result.Result;
     }
     
-    [HttpPut("{userId:guid}/full-name")]
+    [Permission(Permissions.IndividualAccounts.Update)]
+    [HttpPut("{accountId:guid}/full-name")]
     public async Task<ActionResult<Guid>> UpdateFullName(
-        [FromRoute] Guid userId,
+        [FromRoute] Guid accountId,
         [FromBody] UpdateFullNameRequest request,
         [FromServices] UpdateFullNameHandler handler,
         CancellationToken cancellationToken)
     {
         return await HandleCommand(
-            userId,
+            accountId,
             request,
             (r, id) => r.ToCommand(id),
             handler.Handle,
@@ -44,9 +46,10 @@ public class IndividualAccountsController : ApplicationController
             cancellationToken);
     }
     
-    [HttpPut("{userId:guid}/photo")]
+    [Permission(Permissions.IndividualAccounts.Update)]
+    [HttpPut("{accountId:guid}/photo")]
     public async Task<ActionResult<Guid>> UpdatePhoto(
-        [FromRoute] Guid userId,
+        [FromRoute] Guid accountId,
         [FromForm] UpdatePhotoRequest request,
         [FromServices] UpdatePhotoHandler handler,
         CancellationToken cancellationToken)
@@ -55,7 +58,7 @@ public class IndividualAccountsController : ApplicationController
         var fileDto = fileProcessor.Process(request.File);
         
         return await HandleCommand(
-            userId,
+            accountId,
             request,
             (r, id) => r.ToCommand(id, fileDto),
             handler.Handle,

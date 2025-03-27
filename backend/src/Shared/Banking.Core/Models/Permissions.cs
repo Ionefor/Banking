@@ -2,35 +2,45 @@
 
 public static class Permissions
 {
-    // public static class Volunteers
-    // {
-    //     public const string Create = "Volunteer.Create";
-    //     public const string Read = "Volunteer.Read";
-    //     public const string Update = "Volunteer.Update";
-    //     public const string Delete = "Volunteer.Delete";
-    // }
-    //
-    // public static class Pets
-    // {
-    //     public const string Create = "Pet.Create";
-    //     public const string Read = "Pet.Read";
-    //     public const string Update = "Pet.Update";
-    //     public const string Delete = "Pet.Delete";
-    // }
-    //
-    // public static class Species
-    // {
-    //     public const string Create = "Species.Create";
-    //     public const string Read = "Species.Read";
-    //     public const string Update = "Species.Update";
-    //     public const string Delete = "Species.Delete";
-    // }
-    //
-    // public static class Breeds
-    // {
-    //     public const string Create = "Breed.Create";
-    //     public const string Read = "Breed.Read";
-    //     public const string Update = "Breed.Update";
-    //     public const string Delete = "Breed.Delete";
-    // }
+    public static class Accounts
+    {
+        public const string Read = "Account.Read";
+        public const string Update = "Account.Update";
+        public const string Delete = "Account.Delete";
+    }
+    
+    public static class CorporateAccounts
+    {
+        public const string Read = "CorporateAccount.Read";
+        public const string Update = "CorporateAccount.Update";
+    }
+    
+    public static class IndividualAccounts
+    {
+        public const string Read = "IndividualAccount.Read";
+        public const string Update = "IndividualAccount.Update";
+    }
+    
+    public static class BankAccounts
+    {
+        public const string Create = "BankAccount.Create";
+        public const string Read = "BankAccount.Read";
+        public const string Update = "BankAccount.Update";
+        public const string Delete = "BankAccount.Delete";
+    }
+    
+    public static class Cards
+    {
+        public const string Create = "Card.Create";
+        public const string Read = "Card.Read";
+        public const string Update = "Card.Update";
+        public const string Delete = "Card.Delete";
+    }
+    
+    public static class ClientAccounts
+    {
+        public const string Create = "ClientAccount.Create";
+        public const string Read = "ClientAccount.Read";
+        public const string Delete = "ClientAccount.Delete";
+    }
 }

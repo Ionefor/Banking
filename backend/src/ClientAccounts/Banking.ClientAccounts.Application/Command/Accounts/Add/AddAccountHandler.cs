@@ -58,7 +58,7 @@ public class AddAccountHandler :
                     command.ClientAccountId)).ToErrorList();
         }
         
-        var accountId = AccountId.NewGuid();
+        var accountId = BankAccountId.NewGuid();
         
         var paymentDetails = PaymentDetails.
             Create(command.PaymentDetails).Value;
@@ -71,7 +71,7 @@ public class AddAccountHandler :
         Enum.TryParse(typeof(Currencies), command.Сurrency, out var currency);
         var currencyEnum = (Currencies)currency!;
 
-        var account = new Account(
+        var account = new BankAccount(
             accountId, paymentDetails, typeEnum, currencyEnum, balance);
         
         var clientAccountId = ClientAccountId.Create(command.ClientAccountId);

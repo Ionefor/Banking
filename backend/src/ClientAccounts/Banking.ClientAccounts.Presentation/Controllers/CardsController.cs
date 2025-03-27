@@ -13,23 +13,24 @@ namespace Banking.ClientAccounts.Presentation.Controllers;
 
 public class CardsController : ApplicationController
 {
-    [HttpPost("/clientAccounts/{clientAccountId:guid}/account/{accountId:guid}/cards")]
+    [Permission(Permissions.Cards.Create)]
+    [HttpPost("/ClientAccounts/{clientAccountId:guid}/card")]
     public async Task<ActionResult<Guid>> AddCard(
         [FromRoute] Guid clientAccountId,
-        [FromRoute] Guid accountId,
         [FromBody] AddCardRequest request,
         [FromServices] AddCardHandler handler,
         CancellationToken cancellationToken)
     {
         return await HandleCommand(
             request,
-            r => r.ToCommand(clientAccountId, accountId),
+            r => r.ToCommand(clientAccountId),
             handler.Handle,
             error => BadRequest(Envelope.Error(error)),
             cancellationToken);
     }
     
-    [HttpDelete("/{clientAccountId:guid}/cards/{cardId:guid}")]
+    [Permission(Permissions.Cards.Delete)]
+    [HttpDelete("/ClientAccounts/{clientAccountId:guid}/cards/{cardId:guid}")]
     public async Task<ActionResult<Guid>> DeleteCard(
         [FromRoute] Guid clientAccountId,
         [FromRoute] Guid cardId,
@@ -45,7 +46,8 @@ public class CardsController : ApplicationController
             cancellationToken);
     }
     
-    [HttpPut("/{clientAccountId:guid}/cards/{cardId:guid}/main-card")]
+    [Permission(Permissions.Cards.Update)]
+    [HttpPut("/ClientAccounts/{clientAccountId:guid}/cards/{cardId:guid}/main-card")]
     public async Task<ActionResult<Guid>> SetMainCard(
         [FromRoute] Guid clientAccountId,
         [FromRoute] Guid cardId,
@@ -61,6 +63,7 @@ public class CardsController : ApplicationController
             cancellationToken);
     }
     
+    [Permission(Permissions.Cards.Read)]
     [HttpGet("/cards/{cardId:guid}")]
     public async Task<ActionResult<Guid>> GetById(
         [FromRoute] Guid cardId,
@@ -77,21 +80,23 @@ public class CardsController : ApplicationController
         return result.Result;
     }
     
-    [HttpGet("accounts/{accountId:guid}/cards")]
-    public async Task<ActionResult<Guid>> GetByAccountId(
-        [FromRoute] Guid accountId,
+    [Permission(Permissions.Cards.Read)]
+    [HttpGet("/bankAccounts/{bankAccountId:guid}/cards")]
+    public async Task<ActionResult<Guid>> GetByBankAccountId(
+        [FromRoute] Guid bankAccountId,
         [FromQuery] GetCardsWithPaginationRequest request,
         [FromServices] GetByAccountIdHandler handler,
         CancellationToken cancellationToken)
     {
         return await HandleQuery(
             request,
-            r => r.ToAccountQuery(accountId), 
+            r => r.ToAccountQuery(bankAccountId), 
             handler.Handle, 
             cancellationToken
         );
     }
     
+    [Permission(Permissions.Cards.Read)]
     [HttpGet("/{clientAccountId:guid}/cards")]
     public async Task<ActionResult<Guid>> GetByClientAccountId(
         [FromRoute] Guid clientAccountId,

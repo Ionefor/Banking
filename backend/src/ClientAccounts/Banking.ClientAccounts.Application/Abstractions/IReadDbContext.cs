@@ -6,7 +6,7 @@ public interface IReadDbContext
 {
     IQueryable<ClientAccountDto> ClientAccounts { get; }
     
-    IQueryable<AccountDto> Accounts { get; }
+    IQueryable<BankAccountDto> Accounts { get; }
     
     IQueryable<CardDto> Cards { get; }
 }

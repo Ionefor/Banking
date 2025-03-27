@@ -4,6 +4,6 @@ namespace Banking.Accounts.Presentation.Requests.Account;
 
 public record UpdateEmailRequest(string Email)
 {
-    public UpdateEmailCommand ToCommand(Guid userId)
-        => new(userId, Email);
+    public UpdateEmailCommand ToCommand(Guid accountId)
+        => new(accountId, Email);
 }

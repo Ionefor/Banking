@@ -11,7 +11,8 @@ namespace Banking.ClientAccounts.Presentation.Controllers;
 
 public class BankAccountsController : ApplicationController
 {
-    [HttpPost("/ClientAccounts/{clientAccountId:guid}/")]
+    [Permission(Permissions.BankAccounts.Create)]
+    [HttpPost("/ClientAccounts/{clientAccountId:guid}/bankAccount")]
     public async Task<ActionResult<Guid>> AddAccount(
         [FromRoute] Guid clientAccountId,
         [FromBody] AddAccountRequest request,
@@ -26,23 +27,25 @@ public class BankAccountsController : ApplicationController
             cancellationToken);
     }
     
-    [HttpDelete("/{clientAccountId:guid}/accounts/{accountId:guid}")]
+    [Permission(Permissions.BankAccounts.Delete)]
+    [HttpDelete("/{clientAccountId:guid}/bankAccounts/{bankAccountId:guid}")]
     public async Task<ActionResult<Guid>> DeleteAccount(
         [FromRoute] Guid clientAccountId,
-        [FromRoute] Guid accountId,
+        [FromRoute] Guid bankAccountId,
         [FromServices] DeleteAccountHandler handler,
         CancellationToken cancellationToken)
     {
         return await HandleCommand(
             clientAccountId,
-            accountId,
-            (cId, aId) => new DeleteAccountCommand(clientAccountId, accountId),
+            bankAccountId,
+            (cId, aId) => new DeleteAccountCommand(clientAccountId, bankAccountId),
             handler.Handle,
             error => BadRequest(Envelope.Error(error)),
             cancellationToken);
     }
     
-    [HttpGet("/{clientAccountId:guid}/accounts")]
+    [Permission(Permissions.BankAccounts.Read)]
+    [HttpGet("/{clientAccountId:guid}/bankAccounts")]
     public async Task<ActionResult> GetByClientAccountId(
         [FromQuery] GetAccountsWithPaginationRequest request,
         [FromRoute] Guid clientAccountId,
@@ -57,7 +60,8 @@ public class BankAccountsController : ApplicationController
         );
     }
     
-    [HttpGet("/{clientAccountId:guid}/accounts/{accountId:guid}")]
+    [Permission(Permissions.BankAccounts.Read)]
+    [HttpGet("/{clientAccountId:guid}/bankAccounts/{accountId:guid}")]
     public async Task<ActionResult<Guid>> GetById(
         [FromRoute] Guid clientAccountId,
         [FromRoute] Guid accountId,

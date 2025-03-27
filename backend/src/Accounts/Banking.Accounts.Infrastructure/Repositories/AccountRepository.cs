@@ -30,31 +30,31 @@ public class AccountRepository : IAccountRepository
         return Task.CompletedTask;
     }
 
-    public async Task<Result<IndividualAccount, Error>> GetIndividualByUserId(
-        Guid userId, CancellationToken cancellationToken = default)
+    public async Task<Result<IndividualAccount, Error>> GetIndividualById(
+        Guid accountId, CancellationToken cancellationToken = default)
     {
         var result = await _dbContext.IndividualAccounts.
-            FirstOrDefaultAsync(i => i.UserId == userId, cancellationToken);
+            FirstOrDefaultAsync(i => i.Id == accountId, cancellationToken);
 
         if (result is null)
         {
             return Errors.General.NotFound(new ErrorParameters.NotFound
-                (nameof(IndividualAccount), nameof(userId), userId));
+                (nameof(IndividualAccount), nameof(accountId), accountId));
         }
         
         return result;
     }
 
-    public async Task<Result<CorporateAccount, Error>> GetCorporateByUserId(
-        Guid userId, CancellationToken cancellationToken = default)
+    public async Task<Result<CorporateAccount, Error>> GetCorporateById(
+        Guid accountId, CancellationToken cancellationToken = default)
     {
         var result = await _dbContext.CorporateAccounts.
-            FirstOrDefaultAsync(i => i.UserId == userId, cancellationToken);
+            FirstOrDefaultAsync(c => c.Id == accountId, cancellationToken);
 
         if (result is null)
         {
             return Errors.General.NotFound(new ErrorParameters.NotFound
-                (nameof(CorporateAccount), nameof(userId), userId));
+                (nameof(CorporateAccount), nameof(accountId), accountId));
         }
         
         return result;

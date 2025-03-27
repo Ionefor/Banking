@@ -24,16 +24,16 @@ public class GetAccountsByUserIdHandler :
         GetAccountByUserIdQuery query, CancellationToken cancellationToken = default)
     {
         var individualAccount = await _readDbContext.IndividualAccounts.
-            FirstOrDefaultAsync(a => a.UserId == query.UserId, cancellationToken);
+            FirstOrDefaultAsync(i => i.Id == query.AccountId, cancellationToken);
 
         var corporateAccount = await _readDbContext.CorporateAccounts.
-            FirstOrDefaultAsync(a => a.UserId == query.UserId, cancellationToken);
+            FirstOrDefaultAsync(c => c.Id == query.AccountId, cancellationToken);
 
         if (individualAccount is null && corporateAccount is null)
         {
             return Errors.General.
                 NotFound(new ErrorParameters.NotFound(
-                    "User", nameof(query.UserId), query.UserId)).ToErrorList();
+                    nameof(Accounts), nameof(query.AccountId), query.AccountId)).ToErrorList();
         }
 
         return (individualAccount, corporateAccount);

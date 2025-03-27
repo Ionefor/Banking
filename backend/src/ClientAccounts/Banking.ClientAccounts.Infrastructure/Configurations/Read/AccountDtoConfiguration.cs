@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Banking.ClientAccounts.Infrastructure.Configurations.Read;
 
-public class AccountDtoConfiguration : IEntityTypeConfiguration<AccountDto>
+public class AccountDtoConfiguration : IEntityTypeConfiguration<BankAccountDto>
 {
-    public void Configure(EntityTypeBuilder<AccountDto> builder)
+    public void Configure(EntityTypeBuilder<BankAccountDto> builder)
     {
         builder.ToTable("accounts");
 

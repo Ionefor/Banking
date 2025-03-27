@@ -46,29 +46,29 @@ public class ClientAccountRepository :
         return clientAccount;
     }
 
-    public async Task<Result<Account, Error>> GetAccountById(
-        AccountId accountId,
+    public async Task<Result<BankAccount, Error>> GetAccountById(
+        BankAccountId bankAccountId,
         CancellationToken cancellationToken = default)
     {
         var clientAccounts = _dbContext.
             ClientAccounts.Include(c => c.Accounts);
         
         var clientAccount = await clientAccounts.FirstOrDefaultAsync(
-            c => c.Accounts.Any(a => a.Id == accountId), cancellationToken);
+            c => c.Accounts.Any(a => a.Id == bankAccountId), cancellationToken);
 
         if (clientAccount is null)
         {
             return Errors.General.NotFound(
-                new ErrorParameters.NotFound(nameof(ClientAccounts), nameof(AccountId), accountId));
+                new ErrorParameters.NotFound(nameof(ClientAccounts), nameof(BankAccountId), bankAccountId));
         }
         
         var account = clientAccount.Accounts.
-            FirstOrDefault(a => a.Id == accountId);
+            FirstOrDefault(a => a.Id == bankAccountId);
         
         if (account is null)
         {
             return Errors.General.NotFound(
-                new ErrorParameters.NotFound(nameof(Account), nameof(AccountId), accountId));
+                new ErrorParameters.NotFound(nameof(BankAccount), nameof(BankAccountId), bankAccountId));
         }
         
         return account;

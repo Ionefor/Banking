@@ -46,27 +46,27 @@ public class UpdateCompanyNameHandler :
             return validationResult.ToErrorList();
         
         var corporateExist = await _readDbContext.CorporateAccounts.
-            AnyAsync(i => i.UserId == command.UserId, cancellationToken);
+            AnyAsync(c => c.Id == command.AccountId, cancellationToken);
 
         var companyName = SharedKernel.ValueObjects.Name.Create(command.CompanyName).Value;
         
         if(!corporateExist)
         {
-            return Errors.General.
-                NotFound(new ErrorParameters.NotFound
-                    (nameof(CorporateAccount), nameof(command.UserId), command.UserId)).ToErrorList();
+            return Errors.General.NotFound(
+                new ErrorParameters.NotFound(nameof(CorporateAccount), nameof(command.AccountId),
+                    command.AccountId)).ToErrorList();
         }
 
         var corporateAccount = _accountRepository.
-            GetCorporateByUserId(command.UserId, cancellationToken).Result.Value;
+            GetCorporateById(command.AccountId, cancellationToken).Result.Value;
             
         corporateAccount.UpdateCompanyName(companyName);
         
         await _unitOfWork.SaveChangesAsync(cancellationToken);
         
         _logger.
-            LogInformation("User with ID {UserId} update CompanyName.", command.UserId);
+            LogInformation("User with ID {UserId} update CompanyName.", command.AccountId);
 
-        return command.UserId;
+        return command.AccountId;
     }
 }
