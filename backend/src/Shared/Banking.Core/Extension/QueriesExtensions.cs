@@ -60,7 +60,6 @@ public static class QueriesExtensions
         bool condition,
         Expression<Func<T, bool>> predicate)
     {
-        var a = predicate.Name;
         return condition ? source.Where(predicate) : source;
     }
     

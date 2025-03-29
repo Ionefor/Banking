@@ -1,9 +1,9 @@
-﻿using Banking.BankAccounts.Application.Command.Cards.Add;
-using Banking.BankAccounts.Application.Command.Cards.Delete;
-using Banking.BankAccounts.Application.Command.Cards.SetMainCard;
-using Banking.BankAccounts.Application.Queries.Cards.GetByAccountId;
-using Banking.BankAccounts.Application.Queries.Cards.GetByClientAccountId;
-using Banking.BankAccounts.Application.Queries.Cards.GetById;
+﻿using Banking.BankAccounts.Application.Features.Command.Cards.Add;
+using Banking.BankAccounts.Application.Features.Command.Cards.Delete;
+using Banking.BankAccounts.Application.Features.Command.Cards.SetMainCard;
+using Banking.BankAccounts.Application.Features.Queries.Cards.GetByAccountId;
+using Banking.BankAccounts.Application.Features.Queries.Cards.GetByClientAccountId;
+using Banking.BankAccounts.Application.Features.Queries.Cards.GetById;
 using Banking.ClientAccounts.Presentation.Requests.Card;
 using Banking.Core.Models;
 using Microsoft.AspNetCore.Mvc;

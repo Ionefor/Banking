@@ -1,5 +1,4 @@
-﻿
-using Banking.Accounts.Contracts.Dto.Commands;
+﻿using Banking.Accounts.Contracts.Dto.Commands;
 using Banking.Accounts.Contracts.Dto.Models;
 using Banking.Core.Dto;
 using Banking.SharedKernel.Models.Errors;

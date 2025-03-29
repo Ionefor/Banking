@@ -1,8 +1,7 @@
 ﻿using Banking.Accounts.Application.Commands.Update.CompanName;
 using Banking.Accounts.Application.Commands.Update.Tax;
 using Banking.Accounts.Application.Queries.GetByCompanyName;
-using Banking.Accounts.Presentation.Requests.Account;
-using Banking.Accounts.Presentation.Requests.Profile;
+using Banking.Accounts.Presentation.Requests.Corporate;
 using Banking.Core.Models;
 using Banking.Framework.Controller;
 using Microsoft.AspNetCore.Mvc;

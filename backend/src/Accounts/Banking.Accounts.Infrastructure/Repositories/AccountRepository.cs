@@ -8,24 +8,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Banking.Accounts.Infrastructure.Repositories;
 
-public class AccountRepository : IAccountRepository
+public class AccountRepository(AccountsWriteDbContext dbContext) : IAccountRepository
 {
-    private readonly AccountsWriteDbContext _dbContext;
-    
-    public AccountRepository(AccountsWriteDbContext dbContext)
-    {
-        _dbContext = dbContext;
-    }
-    
     public async Task Add<TAccount>(TAccount account, CancellationToken cancellationToken)
         where TAccount : class
     {
-        await _dbContext.Set<TAccount>().AddAsync(account, cancellationToken);
+        await dbContext.Set<TAccount>().AddAsync(account, cancellationToken);
     }
 
     public Task Delete<TAccount>(TAccount account) where TAccount : class
     {
-        _dbContext.Set<TAccount>().Remove(account);
+        dbContext.Set<TAccount>().Remove(account);
         
         return Task.CompletedTask;
     }
@@ -33,7 +26,7 @@ public class AccountRepository : IAccountRepository
     public async Task<Result<IndividualAccount, Error>> GetIndividualById(
         Guid accountId, CancellationToken cancellationToken = default)
     {
-        var result = await _dbContext.IndividualAccounts.
+        var result = await dbContext.IndividualAccounts.
             FirstOrDefaultAsync(i => i.Id == accountId, cancellationToken);
 
         if (result is null)
@@ -48,7 +41,7 @@ public class AccountRepository : IAccountRepository
     public async Task<Result<CorporateAccount, Error>> GetCorporateById(
         Guid accountId, CancellationToken cancellationToken = default)
     {
-        var result = await _dbContext.CorporateAccounts.
+        var result = await dbContext.CorporateAccounts.
             FirstOrDefaultAsync(c => c.Id == accountId, cancellationToken);
 
         if (result is null)

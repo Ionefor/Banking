@@ -1,5 +1,5 @@
 ﻿using Banking.Accounts.Contracts.Dto.Queries;
-using Banking.BankAccounts.Application.Queries.Accounts.GetByClientAccountId;
+using Banking.BankAccounts.Application.Features.Queries.BankAccounts.GetByClientAccountId;
 
 namespace Banking.ClientAccounts.Presentation.Requests.Accounts;
 

@@ -1,4 +1,4 @@
-﻿using Banking.BankAccounts.Application.Command.Accounts.Add;
+﻿using Banking.BankAccounts.Application.Features.Command.BankAccounts.Add;
 
 namespace Banking.ClientAccounts.Presentation.Requests.Accounts;
 

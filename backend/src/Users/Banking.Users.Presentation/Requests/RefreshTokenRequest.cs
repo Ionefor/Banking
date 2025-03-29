@@ -1,4 +1,4 @@
-﻿using Banking.Users.Application.Commands.Refresh;
+﻿using Banking.Users.Application.Features.Commands.Refresh;
 
 namespace Banking.Users.Presentation.Requests;
 

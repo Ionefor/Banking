@@ -1,5 +1,5 @@
 ﻿using Banking.Core.Dto;
-using Banking.Users.Application.Commands.Register.IndividualAccount;
+using Banking.Users.Application.Features.Commands.Register.IndividualAccount;
 using Banking.Users.Contracts.Dto;
 using Microsoft.AspNetCore.Http;
 
@@ -10,6 +10,6 @@ public record RegisterIndividualAccountRequest(
     CreateIndividualAccountDto IndividualAccount,
     IFormFile File)
 {
-    public RegisterIndividualAccountCommand ToCommand(CreateFileDto file) 
+    public RegisterIndividualCommand ToCommand(CreateFileDto file) 
         => new(Register, IndividualAccount, file);
 }

@@ -1,7 +1,7 @@
-﻿using Banking.BankAccounts.Application.Command.Accounts.Add;
-using Banking.BankAccounts.Application.Command.Accounts.Delete;
-using Banking.BankAccounts.Application.Queries.Accounts.GetByClientAccountId;
-using Banking.BankAccounts.Application.Queries.Accounts.GetById;
+﻿using Banking.BankAccounts.Application.Features.Command.BankAccounts.Add;
+using Banking.BankAccounts.Application.Features.Command.BankAccounts.Delete;
+using Banking.BankAccounts.Application.Features.Queries.BankAccounts.GetByClientAccountId;
+using Banking.BankAccounts.Application.Features.Queries.BankAccounts.GetById;
 using Banking.ClientAccounts.Presentation.Requests.Accounts;
 using Banking.Core.Models;
 using Microsoft.AspNetCore.Mvc;

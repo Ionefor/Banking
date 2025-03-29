@@ -1,6 +1,6 @@
 ﻿using Banking.Accounts.Contracts.Dto.Queries;
-using Banking.BankAccounts.Application.Queries.Cards.GetByAccountId;
-using Banking.BankAccounts.Application.Queries.Cards.GetByClientAccountId;
+using Banking.BankAccounts.Application.Features.Queries.Cards.GetByAccountId;
+using Banking.BankAccounts.Application.Features.Queries.Cards.GetByClientAccountId;
 
 namespace Banking.ClientAccounts.Presentation.Requests.Card;
 

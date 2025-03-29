@@ -1,4 +1,4 @@
-﻿using Banking.Users.Application.Commands.Register.CorporateAccount;
+﻿using Banking.Users.Application.Features.Commands.Register.CorporateAccount;
 using Banking.Users.Contracts.Dto;
 
 namespace Banking.Users.Presentation.Requests;
@@ -7,6 +7,6 @@ public record RegisterCorporateAccountRequest(
     RegisterDto Register,
     CreateCorporateAccountDto CorporateAccount)
 {
-    public RegisterCorporateAccountCommand ToCommand() 
+    public RegisterCorporateCommand ToCommand() 
         => new(Register, CorporateAccount);
 }

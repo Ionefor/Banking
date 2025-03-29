@@ -1,8 +1,7 @@
 ﻿using Banking.Accounts.Application.Commands.Update.Name;
 using Banking.Accounts.Application.Commands.Update.Photos;
 using Banking.Accounts.Application.Queries.GetByFullName;
-using Banking.Accounts.Presentation.Requests.Account;
-using Banking.Accounts.Presentation.Requests.Profile;
+using Banking.Accounts.Presentation.Requests.Individual;
 using Banking.Core.Models;
 using Banking.Core.Processors;
 using Banking.Framework.Controller;

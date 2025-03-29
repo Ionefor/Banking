@@ -1,5 +1,5 @@
 ﻿using Banking.Accounts.Contracts.Dto.Queries;
-using Banking.BankAccounts.Application.Queries.ClientAccounts.GetAll;
+using Banking.BankAccounts.Application.Features.Queries.ClientAccounts.GetAll;
 using Banking.SharedKernel;
 
 namespace Banking.ClientAccounts.Presentation.Requests.ClientAccounts;
