@@ -1,5 +1,4 @@
-﻿using Banking.BankAccounts.Application.Command.Cards;
-using Banking.BankAccounts.Application.Command.Cards.Add;
+﻿using Banking.BankAccounts.Application.Features.Command.Cards.Add;
 
 namespace Banking.ClientAccounts.Presentation.Requests.Card;
 

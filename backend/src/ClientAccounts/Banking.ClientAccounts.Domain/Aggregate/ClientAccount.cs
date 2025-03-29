@@ -9,7 +9,6 @@ public class ClientAccount : SoftDeletableEntity<ClientAccountId>
 {
     private readonly List<BankAccount> _accounts = [];
     private readonly List<Card> _cards = [];
-
     private ClientAccount(ClientAccountId id) : base(id) {}
     
     public ClientAccount(
@@ -36,6 +35,7 @@ public class ClientAccount : SoftDeletableEntity<ClientAccountId>
         foreach (var account in _accounts)
             account.Delete();
     }
+    
     public override void Restore()
     {
         base.Restore();
@@ -46,7 +46,7 @@ public class ClientAccount : SoftDeletableEntity<ClientAccountId>
         foreach (var account in _accounts)
             account.Restore();
     }
-
+    
     public void AddAccount(BankAccount account)
     {
         _accounts.Add(account);
@@ -69,7 +69,8 @@ public class ClientAccount : SoftDeletableEntity<ClientAccountId>
     
     public void SetMainCard(Card card)
     {
-        var currentMainCard = _cards.FirstOrDefault(c => c.IsMain);
+        var currentMainCard = _cards.
+            FirstOrDefault(c => c.IsMain);
 
         currentMainCard?.ResetMainCard();
 
@@ -79,8 +80,13 @@ public class ClientAccount : SoftDeletableEntity<ClientAccountId>
         newMainCard!.SetMainCard();
     }
 }
+
 // 1) Сделать Transaction Transfer
 // 2) Сделать новый контроллер для Transaction Transfer
 // 3) Добавить тесты
-// 4) Решить проблему с Permissions построить новую систему??
+
+// Решить проблему с Permissions и построить новую систему
+// Новый тип аккаунта - поддержка (все действия через него?)
+// Запрос на изменение, создание, удаление -> Approve, reject from support
+
 

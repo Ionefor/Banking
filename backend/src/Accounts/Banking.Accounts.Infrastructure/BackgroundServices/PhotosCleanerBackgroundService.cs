@@ -1,5 +1,4 @@
-﻿using Banking.Accounts.Application.Abstractions;
-using Banking.Accounts.Application.PhotoProvider;
+﻿using Banking.Accounts.Application.PhotoProvider;
 using Banking.Core.Messaging;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;

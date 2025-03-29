@@ -1,8 +1,8 @@
 ﻿using Banking.Core.Processors;
-using Banking.Users.Application.Commands.Login;
-using Banking.Users.Application.Commands.Refresh;
-using Banking.Users.Application.Commands.Register.CorporateAccount;
-using Banking.Users.Application.Commands.Register.IndividualAccount;
+using Banking.Users.Application.Features.Commands.Login;
+using Banking.Users.Application.Features.Commands.Refresh;
+using Banking.Users.Application.Features.Commands.Register.CorporateAccount;
+using Banking.Users.Application.Features.Commands.Register.IndividualAccount;
 using Banking.Users.Presentation.Requests;
 using Microsoft.AspNetCore.Mvc;
 using ApplicationController = Banking.Framework.Controller.ApplicationController;
@@ -13,7 +13,7 @@ public class UsersController : ApplicationController
 {
     [HttpPost("individual")]
     public async Task<IActionResult> RegisterIndividualAccount(
-        [FromServices] RegisterIndividualAccountHandler handler,
+        [FromServices] RegisterIndividualHandler handler,
         [FromForm] RegisterIndividualAccountRequest request,
         CancellationToken cancellationToken)
     {
@@ -29,7 +29,7 @@ public class UsersController : ApplicationController
     
     [HttpPost("corporate")]
     public async Task<IActionResult> RegisterCorporateAccount(
-        [FromServices] RegisterCorporateAccountHandler handler,
+        [FromServices] RegisterCorporateHandler handler,
         [FromBody] RegisterCorporateAccountRequest request,
         CancellationToken cancellationToken)
     {

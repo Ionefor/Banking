@@ -67,8 +67,8 @@ public class AccountsContract : IAccountsContract
             {
                 return Errors.Extra.AlreadyExists(
                     new ErrorParameters.ValueAlreadyExists(
-                        $"Individual account with phoneNumber {phoneNumber} already exists"))
-                    .ToErrorList();
+                        $"Individual account with phoneNumber" +
+                            $" {phoneNumber} already exists")).ToErrorList();
             }
         
             var phone = PhoneNumber.Create(phoneNumber).Value; 
@@ -131,7 +131,8 @@ public class AccountsContract : IAccountsContract
         {
             return Errors.Extra.AlreadyExists(
                 new ErrorParameters.ValueAlreadyExists(
-                    $"Corporate account with companyName {companyName} already exists")).ToErrorList();
+                    $"Corporate account with companyName {companyName}" +
+                        $" already exists")).ToErrorList();
         }
         
         var nameOfCompany = Name.Create(companyName).Value;
@@ -143,7 +144,8 @@ public class AccountsContract : IAccountsContract
         {
             return Errors.Extra.AlreadyExists(
                 new ErrorParameters.ValueAlreadyExists(
-                    $"Corporate account with TaxId {taxId} already exists")).ToErrorList();
+                    $"Corporate account with TaxId {taxId}" +
+                        $" already exists")).ToErrorList();
         }
         
         var tax = TaxId.Create(taxId).Value;
@@ -155,7 +157,8 @@ public class AccountsContract : IAccountsContract
         {
             return Errors.Extra.AlreadyExists(
                 new ErrorParameters.ValueAlreadyExists(
-                    $"Corporate account with ContactPhone {contactPhone} already exists")).ToErrorList();
+                    $"Corporate account with ContactPhone {contactPhone}" +
+                        $" already exists")).ToErrorList();
         }
         
         var phone = PhoneNumber.Create(contactPhone).Value;
@@ -178,8 +181,9 @@ public class AccountsContract : IAccountsContract
 
         if (individualAccount is null)
         {
-            return Errors.General.NotFound(new ErrorParameters.NotFound
-                (nameof(IndividualAccount), nameof(accountId), accountId));
+            return Errors.General.
+                NotFound(new ErrorParameters.NotFound(
+                    nameof(IndividualAccount), nameof(accountId), accountId));
         }
 
         return individualAccount;
@@ -193,8 +197,9 @@ public class AccountsContract : IAccountsContract
         
         if (corporateAccount is null)
         {
-            return Errors.General.NotFound(new ErrorParameters.NotFound
-                (nameof(CorporateAccount), nameof(accountId), accountId));
+            return Errors.General.
+                NotFound(new ErrorParameters.NotFound(
+                    nameof(CorporateAccount), nameof(accountId), accountId));
         }
 
         return corporateAccount;

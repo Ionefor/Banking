@@ -4,6 +4,7 @@ using Banking.Accounts.Application.PhotoProvider;
 using Banking.Accounts.Infrastructure.DbContexts;
 using Banking.Accounts.Infrastructure.MessageQueues;
 using Banking.Accounts.Infrastructure.Options;
+using Banking.Accounts.Infrastructure.Providers;
 using Banking.Accounts.Infrastructure.Repositories;
 using Banking.Core.Abstractions;
 using Banking.Core.Messaging;
@@ -43,7 +44,7 @@ public static class DependencyInjection
             options.WithSSL(minioOptions.WithSsl);
         });
     
-        services.AddScoped<IPhotoProvider, MinioProvider.MinioProvider>();
+        services.AddScoped<IPhotoProvider, MinioProvider>();
     
         return services;
     }

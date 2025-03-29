@@ -1,9 +1,9 @@
-﻿using Banking.BankAccounts.Application.Command.ClientAccounts.Create;
-using Banking.BankAccounts.Application.Command.ClientAccounts.Delete;
-using Banking.BankAccounts.Application.Command.ClientAccounts.Restore;
-using Banking.BankAccounts.Application.Command.ClientAccounts.SoftDelete;
-using Banking.BankAccounts.Application.Queries.ClientAccounts.GetAll;
-using Banking.BankAccounts.Application.Queries.ClientAccounts.GetById;
+﻿using Banking.BankAccounts.Application.Features.Command.ClientAccounts.Create;
+using Banking.BankAccounts.Application.Features.Command.ClientAccounts.Delete;
+using Banking.BankAccounts.Application.Features.Command.ClientAccounts.Restore;
+using Banking.BankAccounts.Application.Features.Command.ClientAccounts.SoftDelete;
+using Banking.BankAccounts.Application.Features.Queries.ClientAccounts.GetAll;
+using Banking.BankAccounts.Application.Features.Queries.ClientAccounts.GetById;
 using Banking.ClientAccounts.Presentation.Requests.ClientAccounts;
 using Banking.Core.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -79,7 +79,7 @@ public class ClientAccountsController : ApplicationController
     [HttpGet]
     public async Task<ActionResult> GetAll(
         [FromQuery] GetCAWithPaginationRequest request,
-        [FromServices] GetCAWithPaginationHandler handler,
+        [FromServices] GetCaWithPaginationHandler handler,
         CancellationToken cancellationToken)
     {
         return await HandleQuery(

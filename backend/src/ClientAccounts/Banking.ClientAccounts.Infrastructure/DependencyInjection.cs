@@ -1,17 +1,16 @@
 ﻿using Banking.BankAccounts.Application.Abstractions;
 using Banking.ClientAccounts.Infrastructure.DbContexts;
 using Banking.ClientAccounts.Infrastructure.Repositories;
+using Banking.ClientAccounts.Infrastructure.Services;
 using Banking.Core.Abstractions;
 using Banking.SharedKernel.Definitions;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Banking.ClientAccounts.Infrastructure;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddBankInfrastructure(this IServiceCollection services,
-        IConfiguration configuration)
+    public static IServiceCollection AddBankInfrastructure(this IServiceCollection services)
     {
         services.AddDbContexts().
             AddDatabase().
@@ -22,8 +21,10 @@ public static class DependencyInjection
     
     private static IServiceCollection AddRepositories(this IServiceCollection services)
     {
-      services.AddScoped<IClientAccountRepository, ClientAccountRepository>();
-
+        services.AddScoped<IClientWriteRepository, ClientWriteRepository>();
+        services.AddScoped<IClientAccountService, ClientAccountService>();
+        services.AddScoped<IClientReadRepository, ClientReadRepository>();
+        
         return services;
     }
     private static IServiceCollection AddDbContexts(this IServiceCollection services)

@@ -1,4 +1,5 @@
-﻿using Banking.ClientAccounts.Domain.ValueObjects;
+﻿using System.Linq.Expressions;
+using Banking.ClientAccounts.Domain.ValueObjects;
 using Banking.ClientAccounts.Domain.ValueObjects.Ids;
 using Banking.SharedKernel;
 using Banking.SharedKernel.Models.Abstractions;

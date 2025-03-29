@@ -19,7 +19,7 @@ public static class AddServicesExtension
      public static IServiceCollection AddServices(
         this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddBankModule(configuration).
+        services.AddBankModule().
             AddUserModule(configuration).
             AddAccountsModule(configuration).
             AddCustomSwaggerGen().
@@ -104,11 +104,10 @@ public static class AddServicesExtension
     }
     
     private static IServiceCollection AddBankModule(
-        this IServiceCollection services,
-        IConfiguration configuration)
+        this IServiceCollection services)
     {
         services.
-            AddBankInfrastructure(configuration).
+            AddBankInfrastructure().
             AddBankApplication().
             AddBankPresentation();
 
